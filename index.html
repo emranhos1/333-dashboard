@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Home</title>
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/custom1.css" rel="stylesheet">
+
+  <script src="amCharts/jquery.min.js"></script>
+  <script src="date.js"></script>
+
+  <!----date-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <!-- Resources for word cloud -->
+
+  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+  <!-- Resources for tree map -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
+  <!-- pie -->
+  <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+  <!-- bar -->
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+  <header>
+    <div class="app-header header-shadow">
+      <div class="app-header__logo">
+        <div>
+          <a href="/"><img src="images/333-logo.png" alt="NULL" height="50px" width="auto"></a>
+        </div>
+      </div>
+      <div class="app-header__mobile-menu">
+        <div>
+          <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="app-header__content">
+        <div class="app-header-right">
+          <div class="header-btn-lg pr-0">
+            <div class="widget-content p-0">
+              <div class="widget-content-wrapper">
+                <div class="widget-content-left">
+                  <div class="btn-group">
+                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                      <a class="btn-pill btn-shadow btn-shine btn" href="logout">Logout</a>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="col-lg-12 titleDB">
+      <h1>Dashboard</h1>
+    </div>
+
+    <!-------------- log report and 6 hr trend--------------->
+
+    <div class="col-lg-12 white-block mt-30 ">
+      <div class="row">
+        <div class="col-lg-12 titleDB">
+          <h2>Asterisk</h2>
+        </div>
+
+        <div class="row title-border-top">
+          <div class="col-lg-5 col-md-5 col-sm-12 box-border-right titleDB">
+            <h3 class="mt-20">Log Report (Live)</h3>
+            <div class="col-lg-12 mt-20">
+              <div id="log_report_div" style="width: 100%; height: 390px;"></div>
+            </div>
+            <div class="d-flex justify-content-around mb-3 data-Font mt-30">
+              <div class="bd-highlight text-center">Landed</div>
+              <div class="bd-highlight text-center">In Queue</div>
+              <div class="bd-highlight text-center">Connected to Agents</div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-7 col-sm-12 titleDB">
+            <div class="row">
+              <div class="col-md-7">
+                <h3 class="mt-20">Last 6 Hrs. Trend</h3>
+              </div>
+              <div class="col-md-5">
+                <div id="reportrange2"
+                  style="background: #fff; cursor: pointer; padding: 10px; border: 1px solid #ccc; margin-top: 10px;">
+                  <i class="fa fa-calendar"></i>&nbsp;
+                  <span></span> <i class="fa fa-caret-down"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 mt-20">
+              <div id="last_hour_trend_div" style="width: 100%; height: 390px;"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 text-center white-block-bottom">
+              <a href=""><span class="text-end" style="text-decoration: line-through; color: #B56FB4">History</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!----------------Channel Capacity Report--------------->
+
+
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="bd-highlight titleDB">
+            <h2>Channel Capacity Report</h2>
+          </div>
+          <div class="bd-highlight">
+            <div id="reportrange1" style="background: #fff; cursor: pointer; padding: 10px; border: 1px solid #ccc;">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="area_chart_div" data-url="" style="width: 100%; height: 390px;"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center white-block-bottom">Number of channels vs Time (Hourly)
+        <a href=""><span class="text-end" style="text-decoration: line-through; color: #B56FB4">History</span></a>
+      </div>
+    </div>
+    </div>
+
+
+    <!---------------------Call Traffic and map----------------->
+
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
+          <div class="col-lg-12 white-block titleDB minhight">
+            <div class="d-flex justify-content-between">
+              <h2>Call Traffic</h2>
+              <div id="reportrange3"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div id="call_traffic_div" data-url="" style="width: 100%; height: 390px;"></div>
+            </div>
+            <div class="d-flex justify-content-around mb-3 data-Font">
+              <div class="bd-highlight text-center">ACD <br> (Avg. Call Duration)</div>
+              <div class="bd-highlight text-center">ASR <br>(Avg. Success Ratio)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
+          <div class="col-lg-12 white-block">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h2>Call by Location<br> (Division)</h2>
+              </div>
+              <div class="bd-highlight">Search form</div>
+            </div>
+            <div class="col-lg-12">
+              <img src="images/img-3.jpg" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-----------------------CRD--------------------------->
+
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="bd-highlight titleDB">
+            <h2>CDR Report</h2>
+          </div>
+          <div id="reportrange4" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="cdr_report_div" style="width: 100%; height: 390px;"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!--Agent Hourly Shifting Report---------->
+
+
+
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="bd-highlight titleDB">
+            <h2>Agent Hourly Shifting Report</h2>
+          </div>
+          <div id="reportrange7" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="agent_hourly_shift_div" style="width: 100%; height: 390px;"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="d-flex justify-content-center mb-3 data-Font">
+          <div class="p-2 bd-highlight">Target</div>
+          <div class="p-2 bd-highlight">Deploy</div>
+          <div class="p-2 bd-highlight">Call Received</div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!----------------Agent Hourly Shifting Report (Heat Map)------>
+
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="bd-highlight titleDB">
+            <h2>Agent Hourly Shifting Report (Heat Map)</h2>
+          </div>
+          <div id="reportrange8" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="hourly_shift_heat_map_div" style="width: 100%; height: 390px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------CQC Call Type------------------------>
+
+    <div>
+      <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-12  mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h2>CQC Call Type</h2>
+              </div>
+              <div id="reportrange5"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div id="service_type_div" style="width: 100%; height: 390px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-12  mt-30">
+          <div class="col-lg-12 white-block">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h3>CQC Call Type (Word Cloud)</h3>
+              </div>
+              <div id="reportrange6"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div id="service_type_word_cloud_div" style="width: 100%; height: 390px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--PCQC-->
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="bd-highlight titleDB">
+            <h3>PCQC (Primary Customer Queue Category)</h3>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12">
+          <div class="titleDB d-flex align-items-center">
+            <h4 class="mr-3">PCQC (Word Cloud)</h4>
+            <div id="reportrange9"
+              style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; margin-left: auto;">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+            </div>
+          </div>
+          <div id="pcqc" style="width: 100%; height: 390px;"></div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12">
+          <div class="titleDB d-flex align-items-center">
+            <h4 class="mr-3" style="font-size: 18px;">PCQC Heat Map</h4>
+            <div id="reportrange10"
+              style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; margin-left: auto;">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+            </div>
+          </div>
+          <div id="pcqc_heat_map_div" style="width: 100%; height: 390px;"></div>
+        </div>
+      </div>
+
+
+      <div class="row mt-30">
+        <div class="col-lg-12">
+          <div class="bd-highlight titleDB">
+            <h3>SCQC (Secondary Customer Queue Category)<br> of Phone Directory</h3>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div id="scqc_heat_map_div" style="width: 100%; height: 390px;"></div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>SCQC Name</th>
+                <th>No Of Calls</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-bordered">
+                <td>Education</td>
+                <td>100</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Rail Sheba</td>
+                <td>30</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Environment Pollution</td>
+                <td>40</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Food Safety</td>
+                <td>25</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Threat After Raising Complaint</td>
+                <td>80</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Holding Taxes/ Trade License</td>
+                <td>40</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Government Property</td>
+                <td>25</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Waste Management</td>
+                <td>20</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--sms report-->
+
+    <div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h2>SMS Report</h2>
+              </div>
+              <div id="reportrange11"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div id="sms_report_pie_chart_div" style="width: 100%; height: 390px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h2>SMS Report</h2>
+              </div>
+              <div id="reportrange12"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div id="sms_report_bar_chart_div" style="width: 100%; height: 390px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--end 8th section-->
+
+
+  </main>
+
+
+
+
+
+  <script src="amCharts/log_report.js"></script>
+  <script src="amCharts/last_hour_trend.js"></script>
+  <script src="amCharts/area_chart.js"></script>
+  <script src="amCharts/call_traffic.js"></script>
+  <script src="amCharts/crd.js"></script>
+  <script src="amCharts/cqc.js"></script>
+  <script src="amCharts/word_cloud.js"></script>
+  <script src="amCharts/hour_shifting.js"></script>
+  <script src="amCharts/hourly_shift_heat_map.js"></script>
+  <script src="amCharts/pcqc.js"></script>
+  <script src="amCharts/pcqc_heat_map.js"></script>
+  <script src="amCharts/scqc_heat_map.js"></script>
+  <script src="amCharts/sms_report.js"></script>
+  <script src="amCharts/sms_bar.js"></script>
+
+</body>
+
+</html>
