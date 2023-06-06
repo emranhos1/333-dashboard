@@ -38,8 +38,8 @@ series.labels.template.setAll({
 // Set data
 // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
 series.data.setAll([
-  { value: 10, category: "Number of SMS sent to the citizens" },
-  { value: 5, category: "Number of SMS sent to the Focal Persons" },
+  { value: 10, category: "SMS sent to the citizens" },
+  { value: 5, category: "SMS sent to the Focal Persons" },
 ]);
 
 

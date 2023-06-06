@@ -1,6 +1,8 @@
 am5.ready(function () {
     var root = am5.Root.new("call_success_div");
-
+  
+  
+  
   // Set themes
   // https://www.amcharts.com/docs/v5/concepts/themes/
   root.setThemes([
@@ -28,12 +30,8 @@ am5.ready(function () {
   
   
   // Generate random data
-  var date = new Date();
-  date.setHours(0, 0, 0, 0);
-  var value = 20;
-  
   function generateData() {
-    var value = Math.round(Math.random() * 1000) + 1;
+    var value = Math.round(Math.random() * 100);
     am5.time.add(date, "day", 1);
   
     var epochTimestamp = date.getTime();
@@ -72,7 +70,9 @@ am5.ready(function () {
   }));
   
   var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-    renderer: am5xy.AxisRendererY.new(root, {})
+    renderer: am5xy.AxisRendererY.new(root, {}),
+    min: 0,
+    max: 100
   }));
   
   
@@ -98,7 +98,7 @@ am5.ready(function () {
   
   
   // Set data
-  var data = generateDatas(12);
+  var data = generateDatas(50);
   console.log(JSON.stringify(data));
   series.data.setAll(data);
   
