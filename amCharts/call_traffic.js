@@ -1,20 +1,5 @@
-am5.ready(function() {
-
-/**
- * ---------------------------------------
- * This demo was created using amCharts 5.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v5/
- * ---------------------------------------
- */
-
-// Create root element
-// https://www.amcharts.com/docs/v5/getting-started/#Root_element
-var root = am5.Root.new("call_traffic_div");
+am5.ready(function () {
+  var root = am5.Root.new("call_traffic_div");
 
 
 // Set themes
@@ -31,78 +16,91 @@ var chart = root.container.children.push(am5xy.XYChart.new(root, {
   panY: true,
   wheelX: "panX",
   wheelY: "zoomX",
-  pinchZoomX: true
+  pinchZoomX:true
 }));
+
 
 // Add cursor
 // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+  behavior: "none"
+}));
 cursor.lineY.set("visible", false);
+
+
+// Generate random data
+var date = new Date();
+date.setHours(0, 0, 0, 0);
+var value = 20;
+
+function generateData() {
+  var value = Math.round(Math.random() * 1000) + 1;
+  am5.time.add(date, "day", 1);
+
+  var epochTimestamp = date.getTime();
+
+  var year = date.getFullYear();
+  var month = (date.getMonth() + 1).toString().padStart(2, "0");
+  var day = date.getDate().toString().padStart(2, "0");
+  var minutes = date.getMinutes().toString().padStart(2, "0");
+
+  return {
+    date: epochTimestamp,
+    value: value
+  };
+}
+
+function generateDatas(count) {
+  var data = [];
+  for (var i = 0; i < count; ++i) {
+    data.push(generateData());
+  }
+  return data;
+}
+
 
 
 // Create axes
 // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
-xRenderer.labels.template.setAll({
-  rotation: -90,
-  centerY: am5.p50,
-  centerX: am5.p100,
-  paddingRight: 15
-});
-
-xRenderer.grid.template.setAll({
-  location: 1
-})
-
-var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-  maxDeviation: 0.3,
-  categoryField: "country",
-  renderer: xRenderer,
+var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+  maxDeviation: 0.2,
+  baseInterval: {
+    timeUnit: "minute",
+    count: 1
+  },
+  renderer: am5xy.AxisRendererX.new(root, {}),
   tooltip: am5.Tooltip.new(root, {})
 }));
 
 var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-  maxDeviation: 0.3,
-  renderer: am5xy.AxisRendererY.new(root, {
-    strokeOpacity: 0.1
-  })
+  renderer: am5xy.AxisRendererY.new(root, {})
 }));
 
 
-// Create series
+// Add series
 // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-  name: "Series 1",
+var series = chart.series.push(am5xy.LineSeries.new(root, {
+  name: "Series",
   xAxis: xAxis,
   yAxis: yAxis,
   valueYField: "value",
-  sequencedInterpolation: true,
-  categoryXField: "country",
+  valueXField: "date",
   tooltip: am5.Tooltip.new(root, {
     labelText: "{valueY}"
   })
 }));
 
-series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0 });
-series.columns.template.adapters.add("fill", function(fill, target) {
-  return chart.get("colors").getIndex(series.columns.indexOf(target));
-});
 
-series.columns.template.adapters.add("stroke", function(stroke, target) {
-  return chart.get("colors").getIndex(series.columns.indexOf(target));
-});
+// Add scrollbar
+// https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+chart.set("scrollbarX", am5.Scrollbar.new(root, {
+  orientation: "horizontal"
+}));
 
 
 // Set data
-var data = [{
-  country: "ACD",
-  value: 50
-}, {
-  country: "ASR",
-  value: 20
-}];
-
-xAxis.data.setAll(data);
+var data = generateDatas(12);
+console.log(JSON.stringify(data));
 series.data.setAll(data);
 
 

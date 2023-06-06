@@ -1,15 +1,4 @@
 am5.ready(function(){
-/**
- * ---------------------------------------
- * This demo was created using amCharts 5.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v5/
- * ---------------------------------------
- */
 
 // Create root element
 // https://www.amcharts.com/docs/v5/getting-started/#Root_element
@@ -169,10 +158,10 @@ function sortCategoryAxis() {
 
 // Set data
 var data = [{
-    country: "Complaints",
+    country: "Sent to the citizens",
     value: 5
 }, {
-    country: "Queries",
+    country: "Sent to the Focal Persons",
     value: 10
 }, {
     country: "Total",

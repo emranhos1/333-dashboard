@@ -1,118 +1,115 @@
-am5.ready(function() {
-/**
- * ---------------------------------------
- * This demo was created using amCharts 5.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v5/
- * ---------------------------------------
- */
+am5.ready(function () {
 
-// Create root element
-// https://www.amcharts.com/docs/v5/getting-started/#Root_element
-var root = am5.Root.new("log_report_div");
+  // Create root element
+  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+  var root = am5.Root.new("log_report_div");
 
 
-// Set themes
-// https://www.amcharts.com/docs/v5/concepts/themes/
-root.setThemes([
-  am5themes_Animated.new(root)
-]);
+  // Set themes
+  // https://www.amcharts.com/docs/v5/concepts/themes/
+  root.setThemes([
+    am5themes_Animated.new(root)
+  ]);
 
 
-// Create chart
-// https://www.amcharts.com/docs/v5/charts/xy-chart/
-var chart = root.container.children.push(am5xy.XYChart.new(root, {
-  panX: true,
-  panY: true,
-  wheelX: "panX",
-  wheelY: "zoomX",
-  pinchZoomX: true
-}));
+  // Create chart
+  // https://www.amcharts.com/docs/v5/charts/xy-chart/
+  var chart = root.container.children.push(am5xy.XYChart.new(root, {
+    panX: true,
+    panY: true,
+    wheelX: "none",
+    wheelY: "none"
+  }));
 
-// Add cursor
-// https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-cursor.lineY.set("visible", false);
+  // Create axes
+  // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+  var xRenderer = am5xy.AxisRendererX.new(root, {
+    minGridDistance: 30
+  });
+  xRenderer.labels.template.setAll({
+    rotation: -90,
+    centerY: am5.p50,
+    centerX: 0,
+    paddingRight: 15
+  });
+  xRenderer.grid.template.set("visible", false);
 
+  var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+    maxDeviation: 0.3,
+    categoryField: "log",
+    renderer: xRenderer
+  }));
 
-// Create axes
-// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
-xRenderer.labels.template.setAll({
-  rotation: -90,
-  centerY: am5.p50,
-  centerX: am5.p100,
-  paddingRight: 15
-});
-
-xRenderer.grid.template.setAll({
-  location: 1
-})
-
-var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-  maxDeviation: 0.3,
-  categoryField: "country",
-  renderer: xRenderer,
-  tooltip: am5.Tooltip.new(root, {})
-}));
-
-var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-  maxDeviation: 0.3,
-  renderer: am5xy.AxisRendererY.new(root, {
-    strokeOpacity: 0.1
-  }),
-}));
+  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+    maxDeviation: 0.3,
+    min: 0,
+    renderer: am5xy.AxisRendererY.new(root, {})
+  }));
 
 
+  // Add series
+  // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+  var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+    name: "Series 1",
+    xAxis: xAxis,
+    yAxis: yAxis,
+    valueYField: "value",
+    categoryXField: "log"
+  }));
 
-// Create series
-// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-  name: "Series 1",
-  xAxis: xAxis,
-  yAxis: yAxis,
-  valueYField: "value",
-  sequencedInterpolation: true,
-  categoryXField: "country",
-  tooltip: am5.Tooltip.new(root, {
-    labelText: "{valueY}"
-  })
-}));
+  // Rounded corners for columns
+  series.columns.template.setAll({
+    cornerRadiusTL: 5,
+    cornerRadiusTR: 5,
+    strokeOpacity: 0
+  });
 
-series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0 });
-series.columns.template.adapters.add("fill", function(fill, target) {
-  return chart.get("colors").getIndex(series.columns.indexOf(target));
-});
+  // Make each column to be of a different color
+  series.columns.template.adapters.add("fill", function (fill, target) {
+    return chart.get("colors").getIndex(series.columns.indexOf(target));
+  });
 
-series.columns.template.adapters.add("stroke", function(stroke, target) {
-  return chart.get("colors").getIndex(series.columns.indexOf(target));
-});
+  series.columns.template.adapters.add("stroke", function (stroke, target) {
+    return chart.get("colors").getIndex(series.columns.indexOf(target));
+  });
 
-
-// Set data
-var data = [{
-  country: "Landed",
-  value: 160
-}, {
-  country: "In Queue",
-  value: 30
-}, {
-  country: "Connected to Agents",
-  value: 40
-}];
+  // Add Label bullet
+  series.bullets.push(function () {
+    return am5.Bullet.new(root, {
+      locationY: 1,
+      sprite: am5.Label.new(root, {
+        text: "{valueYWorking.formatNumber('#.')}",
+        fill: root.interfaceColors.get("alternativeText"),
+        centerY: 0,
+        centerX: am5.p50,
+        populateText: true
+      })
+    });
+  });
 
 
-xAxis.data.setAll(data);
-series.data.setAll(data);
+  // Set data
+  var data = [{
+    log: "Call Landed",
+    value: 200
+  }, {
+    log: "Calls in Queue",
+    value: 30
+  }, {
+    log: "CCA",
+    value: 40
+  }, {
+    log: "CT",
+    value: 35
+  }];
+
+  xAxis.data.setAll(data);
+  series.data.setAll(data);
 
 
-// Make stuff animate on load
-// https://www.amcharts.com/docs/v5/concepts/animations/
-series.appear(1000);
-chart.appear(1000, 100);
+  // Make stuff animate on load
+  // https://www.amcharts.com/docs/v5/concepts/animations/
+  series.appear(1000);
+  chart.appear(1000, 100);
 
 });

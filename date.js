@@ -43,7 +43,10 @@ $(function () {
       { id: 'reportrange11', startDate: moment().subtract(7, 'days'), endDate: moment() },
       { id: 'reportrange12', startDate: moment().subtract(7, 'days'), endDate: moment() },
       { id: 'reportrange13', startDate: moment().subtract(7, 'days'), endDate: moment() },
-      { id: 'reportrange14', startDate: moment().subtract(7, 'days'), endDate: moment() }
+      { id: 'reportrange14', startDate: moment().subtract(7, 'days'), endDate: moment() },
+      { id: 'reportrange35', startDate: moment().subtract(7, 'days'), endDate: moment() },
+      { id: 'reportrange36', startDate: moment().subtract(7, 'days'), endDate: moment() },
+      
       // Add more date range objects if needed
     ];
   

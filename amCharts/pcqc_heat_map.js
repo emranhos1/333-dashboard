@@ -1,114 +1,46 @@
 am5.ready(function () {
-  /**
- * ---------------------------------------
- * This demo was created using amCharts 5.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v5/
- * ---------------------------------------
- */
+// Create chart instance
+var chart = am4core.create("pcqc_heat_map_div", am4charts.XYChart);
 
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("pcqc_heat_map_div");
+// Add data
+    chart.data = [{
+        "category": "No Responsibility and Disconnected Call",
+        "value": 450
+    }, {
+        "category": "Helpline Info",
+        "value": 1200
+    }, {
+        "category": "Queries",
+        "value": 1850
+    }, {
+        "category": "Phone",
+        "value": 450
+    }, {
+        "category": "Complaint Customer Experience",
+        "value": 1200
+    }, {
+        "category": "Others",
+        "value": 1850
+    }, {
+        "category": "(MODMR)",
+        "value": 1850
+    }, {
+      "category": "Notifications",
+      "value": 1850
+  }];
 
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-    am5themes_Animated.new(root)
-  ]);
+var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.grid.template.location = 0;
 
-  // Create wrapper container
-  var container = root.container.children.push(
-    am5.Container.new(root, {
-      width: am5.percent(100),
-      height: am5.percent(100),
-      layout: root.verticalLayout
-    })
-  );
+var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
 
-  // Create series
-  // https://www.amcharts.com/docs/v5/charts/hierarchy/#Adding
-  var series = container.children.push(
-    am5hierarchy.Treemap.new(root, {
-      singleBranchOnly: false,
-      downDepth: 1,
-      upDepth: -1,
-      initialDepth: 2,
-      valueField: "value",
-      categoryField: "name",
-      childDataField: "children",
-      nodePaddingOuter: 0,
-      nodePaddingInner: 0
-    })
-  );
+var series = chart.series.push(new am4charts.ColumnSeries());
+series.dataFields.valueX = "value";
+series.dataFields.categoryY = "category";
 
-  series.rectangles.template.setAll({
-    strokeWidth: 2
-  });
+var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+valueLabel.label.text = "{value}";
+valueLabel.label.fontSize = 20;
 
-  // Generate and set data
-  // https://www.amcharts.com/docs/v5/charts/hierarchy/#Setting_data
-  var maxLevels = 2;
-  var maxNodes = 10;
-  var maxValue = 100;
-
-  var data = {
-    name: "Root",
-    children: [
-      {
-        name: "First",
-        children: [
-          {
-            name: "No Responsibility and Disconnected Call",
-            value: 100
-          },
-          {
-            name: "Helpline Info",
-            value: 60
-          },
-          {
-            name: "Query",
-            value: 30
-          }
-        ]
-      },
-      {
-        name: "Second",
-        children: [
-          {
-            name: "Phone",
-            value: 135
-          },
-          {
-            name: "Prank Call",
-            value: 98
-          },
-
-        ]
-      },
-      {
-        name: "Fourth",
-        children: [
-          {
-            name: "Others",
-            value: 10
-          },
-          {
-            name: "Notifications",
-            value: 56
-          }
-        ]
-      }
-    ]
-  };
-
-  series.data.setAll([data]);
-  series.set("selectedDataItem", series.dataItems[0]);
-
-  // Make stuff animate on load
-  series.appear(1000, 100);
 });

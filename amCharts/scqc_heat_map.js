@@ -1,113 +1,45 @@
 am5.ready(function () {
-  /**
- * ---------------------------------------
- * This demo was created using amCharts 5.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v5/
- * ---------------------------------------
- */
+  var chart = am4core.create("scqc_heat_map_div", am4charts.XYChart);
 
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("scqc_heat_map_div");
+// Add data
+    chart.data = [{
+        "category": "Education",
+        "value": 450
+    }, {
+        "category": "Rail Sheba",
+        "value": 500
+    }, {
+        "category": "Environment Pollution",
+        "value": 650
+    }, {
+        "category": "Food Safety",
+        "value": 450
+    }, {
+        "category": "Threat After Raising Complaint",
+        "value": 950
+    }, {
+        "category": "Holding Taxes/ Trade Licensethers",
+        "value": 1150
+    }, {
+        "category": "Government Property",
+        "value": 1100
+    }, {
+      "category": "Waste Management",
+      "value": 1234
+  }];
 
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-    am5themes_Animated.new(root)
-  ]);
+var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+categoryAxis.dataFields.category = "category";
+categoryAxis.renderer.grid.template.location = 0;
 
-  // Create wrapper container
-  var container = root.container.children.push(
-    am5.Container.new(root, {
-      width: am5.percent(100),
-      height: am5.percent(100),
-      layout: root.verticalLayout
-    })
-  );
+var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
 
-  // Create series
-  // https://www.amcharts.com/docs/v5/charts/hierarchy/#Adding
-  var series = container.children.push(
-    am5hierarchy.Treemap.new(root, {
-      singleBranchOnly: false,
-      downDepth: 1,
-      upDepth: -1,
-      initialDepth: 2,
-      valueField: "value",
-      categoryField: "name",
-      childDataField: "children",
-      nodePaddingOuter: 0,
-      nodePaddingInner: 0
-    })
-  );
+var series = chart.series.push(new am4charts.ColumnSeries());
+series.dataFields.valueX = "value";
+series.dataFields.categoryY = "category";
 
-  series.rectangles.template.setAll({
-    strokeWidth: 2
-  });
+var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+valueLabel.label.text = "{value}";
+valueLabel.label.fontSize = 20;
 
-  // Generate and set data
-  // https://www.amcharts.com/docs/v5/charts/hierarchy/#Setting_data
-  var maxLevels = 2;
-  var maxNodes = 10;
-  var maxValue = 100;
-
-  var data = {
-    name: "Root",
-    children: [
-      {
-        name: "First",
-        children: [
-          {
-            name: "Education",
-            value: 100
-          },
-          {
-            name: "Rail Sheba",
-            value: 30
-          },
-          {
-            name: "Environment Pollution",
-            value: 40
-          },
-          {
-            name: "Food Safety",
-            value: 25
-          },
-        ]
-        
-      },
-      {
-        name: "Second",
-      children: [
-        {
-          name: "Threat After Raising Complaint",
-          value: 80
-        },
-        {
-          name: "Holding Taxes/ Trade License",
-          value: 40
-        },
-        {
-          name: "Government Property",
-          value: 25
-        },
-        {
-          name: "Waste Management",
-          value: 20
-        },
-      ]
-      }
-    ]
-  };
-
-  series.data.setAll([data]);
-  series.set("selectedDataItem", series.dataItems[0]);
-
-  // Make stuff animate on load
-  series.appear(1000, 100);
 });

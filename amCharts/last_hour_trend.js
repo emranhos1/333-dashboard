@@ -1,15 +1,4 @@
 am5.ready(function() {
-/**
- * ---------------------------------------
- * This demo was created using amCharts 5.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v5/
- * ---------------------------------------
- */
 
 // Create root element
 // https://www.amcharts.com/docs/v5/getting-started/#Root_element
@@ -47,67 +36,89 @@ var data = [
     time: "6.00",
     landed: 1,
     in_queue: 5,
-    connected_to_agents: 3
+    connected_to_agents: 3,
+    abandonded: 1,
+    transferred: 3
   },
   {
     time: "7.00",
     landed: 1,
     in_queue: 2,
-    connected_to_agents: 6
+    connected_to_agents: 6,
+    abandonded: 2,
+    transferred: 4
   },
   {
     time: "8.30",
     landed: 2,
     in_queue: 3,
-    connected_to_agents: 1
+    connected_to_agents: 1,
+    abandonded: 7,
+    transferred: 5
   },
   {
     time: "9.00",
     landed: 3,
     in_queue: 4,
-    connected_to_agents: 1
+    connected_to_agents: 1,
+    abandonded: 3,
+    transferred: 8
   },
   {
     time: "9.30",
     landed: 5,
     in_queue: 1,
-    connected_to_agents: 2
+    connected_to_agents: 2,
+    abandonded: 4,
+    transferred: 1
   },
   {
     time: "10.00",
     landed: 3,
     in_queue: 2,
-    connected_to_agents: 1
+    connected_to_agents: 1,
+    abandonded: 3,
+    transferred: 6
   },
   {
     time: "10.30",
     landed: 1,
     in_queue: 2,
-    connected_to_agents: 3
+    connected_to_agents: 3,
+    abandonded: 1,
+    transferred: 7
   },
   {
     time: "11.00",
     landed: 2,
     in_queue: 1,
-    connected_to_agents: 5
+    connected_to_agents: 5,
+    abandonded: 2,
+    transferred: 4
   },
   {
     time: "11.30",
     landed: 3,
     in_queue: 5,
-    connected_to_agents: 2
+    connected_to_agents: 2,
+    abandonded: 1,
+    transferred: 2
   },
   {
     time: "12.00",
     landed: 4,
     in_queue: 3,
-    connected_to_agents: 6
+    connected_to_agents: 6,
+    abandonded: 3,
+    transferred: 5
   },
   {
     time: "12.30",
     landed: 1,
     in_queue: 2,
-    connected_to_agents: 4
+    connected_to_agents: 4,
+    abandonded: 4,
+    transferred: 3
   }
 ];
 
@@ -186,6 +197,8 @@ function createSeries(name, field) {
 createSeries("landed", "landed");
 createSeries("in_queue", "in_queue");
 createSeries("connected_to_agents", "connected_to_agents");
+createSeries("abandonded", "abandonded");
+createSeries("transferred", "transferred");
 
 // Add scrollbar
 // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/

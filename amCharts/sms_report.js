@@ -1,15 +1,4 @@
 am5.ready(function(){
-    /**
- * ---------------------------------------
- * This demo was created using amCharts 5.
- * 
- * For more information visit:
- * https://www.amcharts.com/
- * 
- * Documentation is available at:
- * https://www.amcharts.com/docs/v5/
- * ---------------------------------------
- */
 
 // Create root element
 // https://www.amcharts.com/docs/v5/getting-started/#Root_element
@@ -49,8 +38,8 @@ series.labels.template.setAll({
 // Set data
 // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
 series.data.setAll([
-  { value: 10, category: "Queries" },
-  { value: 5, category: "Complaints" },
+  { value: 10, category: "Number of SMS sent to the citizens" },
+  { value: 5, category: "Number of SMS sent to the Focal Persons" },
 ]);
 
 
