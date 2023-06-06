@@ -68,3 +68,28 @@ border-top: 1px solid #E9E9E9;
 .box-border-right{
 	border-right: 2px solid #E9E9E9;
 }
+
+
+.popup {
+	position: fixed;
+	width: 600px;   
+	height: 500px;  
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #e6e3e3; 
+	z-index: 9999;
+	padding: 20px;
+	display: none;
+	border: 2px solid #111010; 
+	color: #131111;
+  }
+
+
+  .detailsBtn {
+	background-color: #007bff; /* Nice blueish color */
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+  }
