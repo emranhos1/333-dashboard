@@ -141,7 +141,7 @@ am5.ready(function () {
     valueYField: "calls_offered",
     valueXField: "date",
     tooltip: am5.Tooltip.new(root, {
-      labelText: "Call Offered: {valueY}"
+      labelText: "Call Landed: {valueY}"
     })
   }));
 

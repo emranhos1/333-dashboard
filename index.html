@@ -98,6 +98,40 @@
       <h1>Dashboard</h1>
     </div>
 
+
+    <!----------------Channel Capacity Report--------------->
+
+
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="bd-highlight titleDB">
+            <h2>Channel Capacity Report</h2>
+          </div>
+          <div class="bd-highlight">
+            <div id="reportrange1" style="background: #fff; cursor: pointer; padding: 10px; border: 1px solid #ccc;">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="area_chart_div" data-url="" style="width: 100%; height: 390px;"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center white-block-bottom">Number of channels vs Time (Hourly)
+        <a href=""><span class="text-end" style="text-decoration: line-through; color: #B56FB4">History</span></a>
+      </div>
+    </div>
+    </div>
+
     <!-------------- log report and 6 hr trend--------------->
 
     <div class="col-lg-12 white-block mt-30 ">
@@ -148,59 +182,38 @@
     </div>
 
 
-    <!----------------Channel Capacity Report--------------->
-
+    <!----------------Agent Hourly Shifting Report (Heat Map)------>
 
     <div class="col-lg-12 white-block mt-30">
       <div class="row">
         <div class="d-flex justify-content-between mb-3">
           <div class="bd-highlight titleDB">
-            <h2>Channel Capacity Report</h2>
+            <h2>Agent Hourly Shifting Report (Heat Map)</h2>
           </div>
-          <div class="bd-highlight">
-            <div id="reportrange1" style="background: #fff; cursor: pointer; padding: 10px; border: 1px solid #ccc;">
-              <i class="fa fa-calendar"></i>&nbsp;
-              <span></span> <i class="fa fa-caret-down"></i>
-            </div>
+          <div id="reportrange8" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
           </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="hourly_shift_heat_map_div" style="width: 100%; height: 390px;"></div>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <div id="area_chart_div" data-url="" style="width: 100%; height: 390px;"></div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-lg-12 text-center white-block-bottom">Number of channels vs Time (Hourly)
-        <a href=""><span class="text-end" style="text-decoration: line-through; color: #B56FB4">History</span></a>
-      </div>
-    </div>
-    </div>
+
+
+
 
 
     <!---------------------Call Traffic and map----------------->
 
     <div class="col-lg-12">
       <div class="row">
-        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>Call by Location (Division)</h2>
-              </div>
-              <div id="reportrange5" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="call_Location_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-        </div>
         <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
           <div class="col-lg-12 white-block titleDB">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -247,9 +260,27 @@
             </table>
           </div>
         </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h2>Call by Location (Division)</h2>
+              </div>
+              <div id="reportrange5"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div id="call_Location_div" style="width: 100%; height: 390px;"></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    
+
 
 
 
@@ -278,7 +309,7 @@
 
       <div class="row">
         <div class="d-flex justify-content-center mb-3 data-Font">
-          <div class="p-2 bd-highlight">Call Offered</div>
+          <div class="p-2 bd-highlight">Call Landed</div>
           <div class="p-2 bd-highlight">Call Target</div>
           <div class="p-2 bd-highlight">Call Abandoned</div>
           <div class="p-2 bd-highlight">Call Answered</div>
@@ -288,49 +319,12 @@
 
 
 
-    <!----------------Agent Hourly Shifting Report (Heat Map)------>
 
-    <div class="col-lg-12 white-block mt-30">
-      <div class="row">
-        <div class="d-flex justify-content-between mb-3">
-          <div class="bd-highlight titleDB">
-            <h2>Agent Hourly Shifting Report (Heat Map)</h2>
-          </div>
-          <div id="reportrange8" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span></span> <i class="fa fa-caret-down"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="hourly_shift_heat_map_div" style="width: 100%; height: 390px;"></div>
-        </div>
-      </div>
-    </div>
 
     <!--------------------------CQC Call Type------------------------>
 
     <div>
       <div class="row">
-        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>CQC Call Type</h2>
-              </div>
-              <div id="reportrange35"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="service_type_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-        </div>
 
         <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
           <div class="col-lg-12 white-block titleDB">
@@ -374,32 +368,85 @@
             </table>
           </div>
         </div>
+
+        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h2>CQC Call Type</h2>
+              </div>
+              <div id="reportrange35"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div id="service_type_div" style="width: 100%; height: 390px;"></div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
 
+    <!--------------------------PCQC------------------------>
 
-
-
-    <!--PCQC-->
-    <div class="col-lg-12 white-block mt-30">
+    <div>
       <div class="row">
-        <div class="d-flex justify-content-between mb-3">
-          <div class="bd-highlight titleDB">
-            <h3>PCQC (Primary Customer Queue Category)</h3>
-          </div>
-        </div>
-        <div class="col-lg-5 col-md-5 col-sm-12">
-          <div class="titleDB d-flex align-items-center">
-            <h4 class="mr-3">PCQC (Word Cloud)</h4>
-            <div id="reportrange9"
-              style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; margin-left: auto;">
-              <i class="fa fa-calendar"></i>&nbsp;
-              <span></span> <i class="fa fa-caret-down"></i>
-            </div>
-          </div>
-          <div id="pcqc" style="width: 100%; height: 390px;"></div>
+        <div class="bd-highlight titleDB">
+          <br>
+          <br>
+          <h3>PCQC (Primary Customer Queue Category)<br> of Phone Directory</h3>
         </div>
 
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>PCQC</th>
+                  <th>No Of Calls</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-bordered">
+                  <td>Notifications</td>
+                  <td>100</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>MODMR</td>
+                  <td>90</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Others</td>
+                  <td>80</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Complaint Customer Experience</td>
+                  <td>70</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Phone</td>
+                  <td>60</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Queries</td>
+                  <td>50</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Helpline Info</td>
+                  <td>40</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>No Resposibility and Disconnected Call</td>
+                  <td>30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
         <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
           <div class="col-lg-12 white-block titleDB">
@@ -419,66 +466,134 @@
           </div>
         </div>
       </div>
+    </div>
 
 
-      <div class="row mt-30">
-        <div class="col-lg-12">
+    <!--------------------------PCQC word------------------------>
+
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
           <div class="bd-highlight titleDB">
-            <h3>SCQC (Secondary Customer Queue Category)<br> of Phone Directory</h3>
+            <h2>PCQC (Word Cloud)</h2>
+          </div>
+          <div id="reportrange9" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
           </div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <div id="scqc_heat_map_div" style="width: 100%; height: 390px;"></div>
-        </div>
+      </div>
 
-
-        <div class="col-lg-6 col-md-6 col-sm-12">
-          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-              <tr>
-                <th>SCQC Name</th>
-                <th>No Of Calls</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="table-bordered">
-                <td>Education</td>
-                <td>100</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Rail Sheba</td>
-                <td>30</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Environment Pollution</td>
-                <td>40</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Food Safety</td>
-                <td>25</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Threat After Raising Complaint</td>
-                <td>80</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Holding Taxes/ Trade License</td>
-                <td>40</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Government Property</td>
-                <td>25</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Waste Management</td>
-                <td>20</td>
-              </tr>
-            </tbody>
-          </table>
-
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="pcqc" style="width: 100%; height: 390px;"></div>
         </div>
       </div>
     </div>
+
+
+
+    <!--------------------------  SPCQC  ------------------------>
+
+    <div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bd-highlight titleDB">
+            <br>
+            <br>
+            <h3>SCQC (Secondary Customer Queue Category)<br> of Phone Directory</h3>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>SCQC</th>
+                  <th>No Of Calls</th>
+                </tr>
+              </thead>
+                <tr class="table-bordered">
+                  <td>Education</td>
+                  <td>100</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Rail Sheba</td>
+                  <td>30</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Environment Pollution</td>
+                  <td>40</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Food Safety</td>
+                  <td>25</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Threat After Raising Complaint</td>
+                  <td>80</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Holding Taxes/ Trade License</td>
+                  <td>40</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Government Property</td>
+                  <td>25</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Waste Management</td>
+                  <td>20</td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h2>SPCQC Types</h2>
+              </div>
+              <div id="reportrange42"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div id="scqc_heat_map_div" style="width: 100%; height: 390px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--------------------------SCQC word------------------------>
+
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="bd-highlight titleDB">
+            <h2>SCQC (Word Cloud)</h2>
+          </div>
+          <div id="reportrange9" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="scqc_cloud" style="width: 100%; height: 390px;"></div>
+        </div>
+      </div>
+    </div>
+
 
 
 
@@ -525,6 +640,30 @@
       </div>
     </div>
 
+    <!--------------------------SMS Hourly Report------------------------>
+
+    <div class="col-lg-12 white-block mt-30">
+      <div class="row">
+        <div class="d-flex justify-content-between mb-3">
+          <div class="bd-highlight titleDB">
+            <h2>SMS Report (Hourly)</h2>
+          </div>
+          <div id="reportrange41" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span></span> <i class="fa fa-caret-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="sms_hourly" style="width: 100%; height: 390px;"></div>
+        </div>
+      </div>
+    </div>
+
+
+
 
 
     <!---------------------Call Traffic and map----------------->
@@ -534,7 +673,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
           <div class="col-lg-12 white-block titleDB minhight">
             <div class="d-flex justify-content-between">
-              <h2>Call Traffic</h2>
+              <h2>Average Call Duration</h2>
               <div id="reportrange3"
                 style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
                 <i class="fa fa-calendar"></i>&nbsp;
@@ -545,7 +684,7 @@
               <div id="call_traffic_div" data-url="" style="width: 100%; height: 390px;"></div>
             </div>
             <div class="d-flex justify-content-around mb-3 data-Font">
-              <div class="bd-highlight text-center">Call Duration(In Seconds) Vs Date</div>
+              <div class="bd-highlight text-center">Average Call Duration(sec)</div>
             </div>
           </div>
         </div>
@@ -553,7 +692,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
           <div class="col-lg-12 white-block titleDB minhight">
             <div class="d-flex justify-content-between">
-              <h2>Call Success Ratio</h2>
+              <h2>Average Success Ratio (%)</h2>
               <div id="reportrange36"
                 style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
                 <i class="fa fa-calendar"></i>&nbsp;
@@ -564,7 +703,7 @@
               <div id="call_success_div" data-url="" style="width: 100%; height: 390px;"></div>
             </div>
             <div class="d-flex justify-content-around mb-3 data-Font">
-              <div class="bd-highlight text-center">Success Ratio Vs Time</div>
+              <div class="bd-highlight text-center">Average Success Ratio (%)</div>
             </div>
           </div>
         </div>
@@ -594,6 +733,8 @@
   <script src="amCharts/sms_bar.js"></script>
   <script src="amCharts/locationMap.js"></script>
   <script src="amCharts/call_success.js"></script>
+  <script src="amCharts/pcqc copy.js"></script>
+  <script src="amCharts/sms_hourly.js"></script>
 
 </body>
 

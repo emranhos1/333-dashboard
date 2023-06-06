@@ -66,7 +66,7 @@ var series = chart.series.push(am5xy.ColumnSeries.new(root, {
 }));
 
 series.columns.template.setAll({
-  tooltipText: "Calls Offered:  {value}",
+  tooltipText: "Call Landed:  {value}",
   strokeOpacity: 1,
   strokeWidth: 2,
   width: am5.percent(100),

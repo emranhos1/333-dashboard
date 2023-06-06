@@ -5,28 +5,28 @@ var chart = am4core.create("pcqc_heat_map_div", am4charts.XYChart);
 // Add data
     chart.data = [{
         "category": "No Responsibility and Disconnected Call",
-        "value": 450
+        "value": 30
     }, {
         "category": "Helpline Info",
-        "value": 1200
+        "value": 40
     }, {
         "category": "Queries",
-        "value": 1850
+        "value": 50
     }, {
         "category": "Phone",
-        "value": 450
+        "value": 60
     }, {
         "category": "Complaint Customer Experience",
-        "value": 1200
+        "value": 70
     }, {
         "category": "Others",
-        "value": 1850
+        "value": 80
     }, {
         "category": "(MODMR)",
-        "value": 1850
+        "value": 90
     }, {
       "category": "Notifications",
-      "value": 1850
+      "value": 100
   }];
 
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
