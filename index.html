@@ -286,38 +286,102 @@
 
     <!--Agent Hourly Shifting Report---------->
 
-
-
-    <div class="col-lg-12 white-block mt-30">
+    <div class="col-lg-12">
       <div class="row">
-        <div class="d-flex justify-content-between mb-3">
-          <div class="bd-highlight titleDB">
-            <h2>Agent Hourly Shifting Report</h2>
-          </div>
-          <div id="reportrange7" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span></span> <i class="fa fa-caret-down"></i>
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Agent Hourly Shifting</th>
+                  <th>No Of Calls</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-bordered">
+                  <td>Call Landed</td>
+                  <td>100</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Call Target</td>
+                  <td>30</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Call Abandoned</td>
+                  <td>40</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Call Answered</td>
+                  <td>25</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="agent_hourly_shift_div" style="width: 100%; height: 390px;"></div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="d-flex justify-content-center mb-3 data-Font">
-          <div class="p-2 bd-highlight">Call Landed</div>
-          <div class="p-2 bd-highlight">Call Target</div>
-          <div class="p-2 bd-highlight">Call Abandoned</div>
-          <div class="p-2 bd-highlight">Call Answered</div>
+        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="bd-highlight titleDB">
+                <h2>Agent Hourly Shifting Report</h2>
+              </div>
+              <div id="reportrange7" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div id="agent_hourly_shift_div" style="width: 100%; height: 390px;"></div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
 
+    <!---------------------Call Traffic and map----------------->
 
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
+          <div class="col-lg-12 white-block titleDB minhight">
+            <div class="d-flex justify-content-between">
+              <h2>Average Call Duration</h2>
+              <div id="reportrange3"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div id="call_traffic_div" data-url="" style="width: 100%; height: 390px;"></div>
+            </div>
+            <div class="d-flex justify-content-around mb-3 data-Font">
+              <div class="bd-highlight text-center">Average Call Duration(sec)</div>
+            </div>
+          </div>  
+        </div>
+
+        <div class="col-lg-5 col-md-6 col-sm-12  mt-30">
+          <div class="col-lg-12 white-block titleDB minhight">
+            <div class="d-flex justify-content-between">
+              <h2>Average Success Ratio (%)</h2>
+              <div id="reportrange36"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div id="call_success_div" data-url="" style="width: 100%; height: 390px;"></div>
+            </div>
+            <div class="d-flex justify-content-around mb-3 data-Font">
+              <div class="bd-highlight text-center">Average Success Ratio (%)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 
 
@@ -666,57 +730,8 @@
 
 
 
-    <!---------------------Call Traffic and map----------------->
-
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
-          <div class="col-lg-12 white-block titleDB minhight">
-            <div class="d-flex justify-content-between">
-              <h2>Average Call Duration</h2>
-              <div id="reportrange3"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="call_traffic_div" data-url="" style="width: 100%; height: 390px;"></div>
-            </div>
-            <div class="d-flex justify-content-around mb-3 data-Font">
-              <div class="bd-highlight text-center">Average Call Duration(sec)</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
-          <div class="col-lg-12 white-block titleDB minhight">
-            <div class="d-flex justify-content-between">
-              <h2>Average Success Ratio (%)</h2>
-              <div id="reportrange36"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="call_success_div" data-url="" style="width: 100%; height: 390px;"></div>
-            </div>
-            <div class="d-flex justify-content-around mb-3 data-Font">
-              <div class="bd-highlight text-center">Average Success Ratio (%)</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
 
   </main>
-
-
-
-
 
   <script src="amCharts/log_report.js"></script>
   <script src="amCharts/last_hour_trend.js"></script>
