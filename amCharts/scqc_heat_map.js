@@ -4,28 +4,28 @@ am5.ready(function () {
 // Add data
     chart.data = [{
         "category": "Education",
-        "value": 450
+        "value": 120
     }, {
         "category": "Rail Sheba",
-        "value": 500
+        "value": 110
     }, {
         "category": "Environment Pollution",
-        "value": 650
+        "value": 100
     }, {
         "category": "Food Safety",
-        "value": 450
+        "value": 90
     }, {
         "category": "Threat After Raising Complaint",
-        "value": 950
+        "value": 80
     }, {
         "category": "Holding Taxes/ Trade Licensethers",
-        "value": 1150
+        "value": 70
     }, {
         "category": "Government Property",
-        "value": 1100
+        "value": 60
     }, {
       "category": "Waste Management",
-      "value": 1234
+      "value": 50
   }];
 
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
