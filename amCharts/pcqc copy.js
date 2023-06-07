@@ -23,26 +23,29 @@ am5.ready(function() {
   series.rotationThreshold = 0.5;
   
     series.data = [{
-        "tag": "No Responsibility and Disconnected Call",
-        "count": "65"
-    }, {
-        "tag": "Helpline Info",
-        "count": "85"
-    }, {
-        "tag": "Queries",
-        "count": "72"
-    }, {
-        "tag": "Phone",
+        "tag": "Education",
         "count": "50"
     }, {
-        "tag": "Prank Call",
-        "count": "50"
+        "tag": "Rail Sheba",
+        "count": "60"
     }, {
-        "tag": "Notifications",
-        "count": "50"
+        "tag": "Environment Pollution",
+        "count": "70"
     }, {
-        "tag": "Others",
-        "count": "50"
+        "tag": "Food Safety",
+        "count": "80"
+    }, {
+        "tag": "Threat After Raising Complaint",
+        "count": "90"
+    }, {
+        "tag": "Holding Taxes/ Trade License",
+        "count": "100"
+    }, {
+        "tag": "Government Property",
+        "count": "110"
+    }, {
+        "tag": "Waste Management",
+        "count": "120"
     }];
   
   
