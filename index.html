@@ -46,12 +46,6 @@
   <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
 
-
-
-
-
-
-
 </head>
 
 <body>
@@ -127,7 +121,7 @@
 
     <div class="row">
       <div class="col-lg-12 text-center white-block-bottom">Number of channels vs Time (Hourly)
-        <a href=""><span class="text-end" style="text-decoration: line-through; color: #B56FB4">History</span></a>
+        <a href=""><span class="text-end" style="text-decoration: line-through; color: #B56FB4">Button</span></a>
       </div>
     </div>
     </div>
@@ -220,7 +214,7 @@
               <thead>
                 <tr>
                   <th>Division</th>
-                  <th>No Of Calls</th>
+                  <th>No Of Division</th>
                 </tr>
               </thead>
               <tbody>
@@ -257,8 +251,7 @@
                   <td>20</td>
                 </tr>
               </tbody>
-            </table>  
-          <button id="detailsBtn" class="detailsBtn">Details</button> 
+            </table>
           </div>
         </div>
         <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
@@ -283,56 +276,7 @@
     </div>
 
 
-    <div id="popupWindow" class="popup">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <div>
-          <h3>Call by Location (Division)</h3>
-        </div>
-        <thead>
-          <tr>
-            <th>Division</th>
-            <th>No Of Calls</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-bordered">
-            <td>Dhaka</td>
-            <td>100</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Chittagong</td>
-            <td>30</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Sylhet</td>
-            <td>40</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Mymensingh</td>
-            <td>25</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Barisal</td>
-            <td>80</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Khulna</td>
-            <td>40</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Rajshahi</td>
-            <td>25</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Rangpur</td>
-            <td>20</td>
-          </tr>
-        </tbody>
-      </table> 
-      <div class="d-flex justify-content-center">
-        <button id="closeBtn" class="btn btn-primary">Close</button>
-      </div>
-    </div>
+
 
 
 
@@ -377,7 +321,8 @@
               <div class="bd-highlight titleDB">
                 <h2>Hourly Call Handling Report</h2>
               </div>
-              <div id="reportrange7" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+              <div id="reportrange7"
+                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
                 <i class="fa fa-calendar"></i>&nbsp;
                 <span></span> <i class="fa fa-caret-down"></i>
               </div>
@@ -387,14 +332,41 @@
                 <div id="agent_hourly_shift_div" style="width: 100%; height: 390px;"></div>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!---------------------Call Traffic and map----------------->
+    <!---------------------Average Call Duration----------------->
 
     <div class="col-lg-12">
       <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Average Call Duration</th>
+                  <th>Minutes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-bordered">
+                  <td>Today Average</td>
+                  <td>2</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Last 7 Days Average</td>
+                  <td>2.5</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Last 30 Days Average</td>
+                  <td>2.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
           <div class="col-lg-12 white-block titleDB minhight">
             <div class="d-flex justify-content-between">
@@ -411,10 +383,45 @@
             <div class="d-flex justify-content-around mb-3 data-Font">
               <div class="bd-highlight text-center">Average Call Duration(sec)</div>
             </div>
-          </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!---------------------Average Success Ratio (%)----------------->
+
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
+          <div class="col-lg-12 white-block titleDB">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Average Success Ratio (%)</th>
+                  <th>Percetage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-bordered">
+                  <td>Today Average</td>
+                  <td>92</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Last 7 Days Average</td>
+                  <td>85</td>
+                </tr>
+                <tr class="table-bordered">
+                  <td>Last 30 Days Average</td>
+                  <td>85</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <div class="col-lg-5 col-md-6 col-sm-12  mt-30">
+
+        <div class="col-lg-6 col-md-6 col-sm-12  mt-30">
           <div class="col-lg-12 white-block titleDB minhight">
             <div class="d-flex justify-content-between">
               <h2>Average Success Ratio (%)</h2>
@@ -432,7 +439,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -515,7 +521,7 @@
         <div class="bd-highlight titleDB">
           <br>
           <br>
-          <h3>PCQC (Primary Customer Queue Category)<br> of Phone Directory</h3>
+          <h3>PCQC (Primary Customer Queue Category)</h3>
         </div>
 
         <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
@@ -562,6 +568,7 @@
                 </tr>
               </tbody>
             </table>
+            <button id="detailsBtn" class="detailsBtn">Details</button>
           </div>
         </div>
 
@@ -582,6 +589,55 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+
+    <div id="popupWindow" class="popup">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>PCQC</th>
+            <th>No Of PCQC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-bordered">
+            <td>Notifications</td>
+            <td>100</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>MODMR</td>
+            <td>90</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Others</td>
+            <td>80</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Complaint Customer Experience</td>
+            <td>70</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Phone</td>
+            <td>60</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Queries</td>
+            <td>50</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Helpline Info</td>
+            <td>40</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>No Resposibility and Disconnected Call</td>
+            <td>30</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center">
+        <button id="closeBtn" class="btn btn-primary">Close</button>
       </div>
     </div>
 
@@ -618,7 +674,7 @@
           <div class="bd-highlight titleDB">
             <br>
             <br>
-            <h3>SCQC (Secondary Customer Queue Category)<br> of Phone Directory</h3>
+            <h3>SCQC (Secondary Customer Queue Category)</h3>
           </div>
         </div>
 
@@ -631,40 +687,41 @@
                   <th>No Of Calls</th>
                 </tr>
               </thead>
-                <tr class="table-bordered">
-                  <td>Education</td>
-                  <td>100</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Rail Sheba</td>
-                  <td>30</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Environment Pollution</td>
-                  <td>40</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Food Safety</td>
-                  <td>25</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Threat After Raising Complaint</td>
-                  <td>80</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Holding Taxes/ Trade License</td>
-                  <td>40</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Government Property</td>
-                  <td>25</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Waste Management</td>
-                  <td>20</td>
-                </tr>
-                </tbody>
+              <tr class="table-bordered">
+                <td>Education</td>
+                <td>100</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Rail Sheba</td>
+                <td>30</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Environment Pollution</td>
+                <td>40</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Food Safety</td>
+                <td>25</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Threat After Raising Complaint</td>
+                <td>80</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Holding Taxes/ Trade License</td>
+                <td>40</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Government Property</td>
+                <td>25</td>
+              </tr>
+              <tr class="table-bordered">
+                <td>Waste Management</td>
+                <td>20</td>
+              </tr>
+              </tbody>
             </table>
+            <button id="detailsBtn2" class="detailsBtn">Details</button>
           </div>
         </div>
 
@@ -685,6 +742,55 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+
+    <div id="popupWindow2" class="popup">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>SCQC</th>
+            <th>No Of SCQC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-bordered">
+            <td>Education</td>
+            <td>100</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Rail Sheba</td>
+            <td>30</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Environment Pollution</td>
+            <td>40</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Food Safety</td>
+            <td>25</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Threat After Raising Complaint</td>
+            <td>80</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Holding Taxes/ Trade License</td>
+            <td>40</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Government Property</td>
+            <td>25</td>
+          </tr>
+          <tr class="table-bordered">
+            <td>Waste Management</td>
+            <td>20</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-center">
+        <button id="closeBtn2" class="btn btn-primary">Close</button>
       </div>
     </div>
 
@@ -802,7 +908,12 @@
     var detailsBtn = document.getElementById('detailsBtn');
     var popupWindow = document.getElementById('popupWindow');
     var popupTable = document.getElementById('popupTable');
-    var closeBtn = document.getElementById('closeBtn');
+
+    var detailsBtn2 = document.getElementById('detailsBtn2');
+    var popupWindow2 = document.getElementById('popupWindow2');
+    var popupTable2 = document.getElementById('popupTable2');
+
+    var closeBtn2 = document.getElementById('closeBtn2');
 
     // Function to show the pop-up window
     function showPopup() {
@@ -814,9 +925,20 @@
       popupWindow.style.display = 'none';
     }
 
+    // Function to show the pop-up window
+    function showPopup() {
+      popupWindow2.style.display = 'block';
+    }
+    // Function to close the pop-up window
+    function closePopup() {
+      popupWindow2.style.display = 'none';
+    }
+
     // Attach event listeners
     detailsBtn.addEventListener('click', showPopup);
     closeBtn.addEventListener('click', closePopup);
+    detailsBtn2.addEventListener('click', showPopup);
+    closeBtn2.addEventListener('click', closePopup);
   </script>
 
 </body>
