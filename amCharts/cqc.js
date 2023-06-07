@@ -8,25 +8,25 @@ var chart = am4core.create("service_type_div", am4charts.XYChart);
 // Add data
     chart.data = [{
         "category": "Complaints",
-        "value": 450
+        "value": 70
     }, {
         "category": "Imcomplete Complaints",
-        "value": 1200
+        "value": 80
     }, {
         "category": "Queries",
-        "value": 1850
+        "value": 90
     }, {
         "category": "No Response and Disconnected Call",
-        "value": 450
+        "value": 100
     }, {
         "category": "Complaint Customer Experience",
-        "value": 1200
+        "value": 110
     }, {
         "category": "Emergency Assistance",
-        "value": 1850
+        "value": 120
     }, {
         "category": "MODMR",
-        "value": 1250
+        "value": 130
     }];
 
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());

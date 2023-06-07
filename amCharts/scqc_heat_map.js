@@ -4,28 +4,28 @@ am5.ready(function () {
 // Add data
     chart.data = [{
         "category": "Education",
-        "value": 120
+        "value": 50
     }, {
         "category": "Rail Sheba",
-        "value": 110
-    }, {
-        "category": "Environment Pollution",
-        "value": 100
-    }, {
-        "category": "Food Safety",
-        "value": 90
-    }, {
-        "category": "Threat After Raising Complaint",
-        "value": 80
-    }, {
-        "category": "Holding Taxes/ Trade Licensethers",
-        "value": 70
-    }, {
-        "category": "Government Property",
         "value": 60
     }, {
+        "category": "Environment Pollution",
+        "value": 70
+    }, {
+        "category": "Food Safety",
+        "value": 80
+    }, {
+        "category": "Threat After Raising Complaint",
+        "value": 90
+    }, {
+        "category": "Holding Taxes/ Trade Licensethers",
+        "value": 100
+    }, {
+        "category": "Government Property",
+        "value": 110
+    }, {
       "category": "Waste Management",
-      "value": 50
+      "value": 120
   }];
 
 var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
