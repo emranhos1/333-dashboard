@@ -1,0 +1,24 @@
+.smaller-heading {
+	font-size: smaller;
+}
+
+.bold-bigger {
+	font-weight: bold;
+	font-size: larger;
+}
+
+
+.card-body {
+	height: auto;
+}
+
+.card-body h6,
+.card-body h3,
+.card-body p {
+	white-space: normal;
+	word-wrap: break-word;
+}
+.comp-card {
+	height: 100px;
+	margin-right: 5px;
+}

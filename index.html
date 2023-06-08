@@ -21,13 +21,7 @@
   <script src="amCharts/jquery.min.js"></script>
   <script src="date.js"></script>
 
-  <!----date-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <!-- Resources for word cloud -->
-
   <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
@@ -46,6 +40,8 @@
   <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
 
+  <!-- google chart -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
@@ -88,850 +84,222 @@
 
   <main class="container">
 
-    <div class="col-lg-12 titleDB">
-      <h1>Dashboard</h1>
-    </div>
+    <div class="row">
+      <div class="col-lg-8 white-block mt-30">
 
-
-    <!----------------Channel Capacity Report--------------->
-
-
-    <div class="col-lg-12 white-block mt-30">
-      <div class="row">
-        <div class="d-flex justify-content-between mb-3">
-          <div class="bd-highlight titleDB">
-            <h2>Channel Capacity</h2>
-          </div>
-          <div class="bd-highlight">
-            <div id="reportrange1" style="background: #fff; cursor: pointer; padding: 10px; border: 1px solid #ccc;">
-              <i class="fa fa-calendar"></i>&nbsp;
-              <span></span> <i class="fa fa-caret-down"></i>
+        <!-- call stat heading -->
+        <div class="row">
+          <div class="d-flex justify-content-between mb-3">
+            <div class="bd-highlight titleDB">
+              <h2>Call Statistics</h2>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-
-    <div class="row">
-      <div class="col-lg-12">
-        <div id="area_chart_div" data-url="" style="width: 100%; height: 390px;"></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12 text-center white-block-bottom">Number of channels vs Time (Hourly)
-        <a href=""><span class="text-end" style="text-decoration: line-through; color: #B56FB4">History</span></a>
-      </div>
-    </div>
-    </div>
-
-    <!-------------- log report and 6 hr trend--------------->
-
-    <div class="col-lg-12 white-block mt-30 ">
-      <div class="row">
-        <div class="col-lg-12 titleDB">
-          <h2>Asterisk</h2>
+        <!-- call stat graph -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="stacked_area_div" data-url="" style="width: 100%; height: 390px;"></div>
+          </div>
         </div>
 
-        <div class="row title-border-top">
-          <div class="col-lg-5 col-md-5 col-sm-12 box-border-right titleDB">
-            <h3 class="mt-20">Log Report (Live)</h3>
-            <div class="col-lg-12 mt-20">
-              <div id="log_report_div" style="width: 100%; height: 390px;"></div>
-            </div>
-            <div class="d-flex justify-content-around mb-3 data-Font mt-30">
-              <div class="bd-highlight text-center">Call Landed</div>
-              <div class="bd-highlight text-center">Calls in Queue</div>
-              <div class="bd-highlight text-center">Call Connected with Agents(CCA)</div>
-              <div class="bd-highlight text-center">Call Transferred/forwarded(CT)</div>
-            </div>
+        <!-- call spark chart -->
+        <div class="row">
+          <div class="col-md-3 col-lg-3 border">
+            <h6 class="smaller-heading">Calls</h6>
+            <span class="bold-bigger">12500</span>
+            <div id="spark_line_dev1"></div>
           </div>
+          <div class="col-md-3 col-lg-3 border">
+            <h6 class="smaller-heading">Average success rate</h6>
+            <span class="bold-bigger">80%</span>
+            <div id="spark_line_dev2"></div>
+          </div>
+          <div class="col-md-3 col-lg-3 border">
+            <h6 class="smaller-heading">Average call duration</h6>
+            <span class="bold-bigger">6</span>
+            <div id="spark_line_dev3"></div>
+          </div>
+          <div class="col-md-3 col-lg-3 border">
+            <h6 class="smaller-heading">Service Level</h6>
+            <span class="bold-bigger">52</span>
+            <div id="spark_line_dev4"></div>
+          </div>
+          <div class="w-100"></div>
 
-          <div class="col-lg-7 col-md-7 col-sm-12 titleDB">
-            <div class="row">
-              <div class="col-md-6">
-                <h3 class="mt-20">Last 6 Hrs. Trend</h3>
-              </div>
-              <div class="col-md-6 text-right">
-                <div id="reportrange2"
-                  style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc; margin-top: 10px">
-                  <i class="fa fa-calendar"></i>&nbsp;
-                  <span></span> <i class="fa fa-caret-down"></i>
+          <div class="col-md-3 col-lg-3 border">
+            <h6 class="smaller-heading">Abandon rate</h6>
+            <span class="bold-bigger">20%</span>
+            <div id="spark_line_dev5"></div>
+          </div>
+          <div class="col-md-3 col-lg-3 border">
+            <h6 class="smaller-heading">Average handle time</h6>
+            <span class="bold-bigger">2</span>
+            <div id="spark_line_dev6"></div>
+          </div>
+          <div class="col-md-3 col-lg-3 border">
+            <h6 class="smaller-heading">Average wait time</h6>
+            <span class="bold-bigger">2</span>
+            <div id="spark_line_dev7"></div>
+          </div>
+          <div class="col-md-3 col-lg-3 border">
+            <h6 class="smaller-heading">Phantom Call</h6>
+            <span class="bold-bigger">1200</span>
+            <div id="spark_line_dev8"></div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- last 30 days card -->
+      <div class="col-lg-4 white-block mt-30">
+        <div class="row">
+          <div class="justify-content-between mb-3">
+            <div class="bd-highlight titleDB">
+              <div class="row">
+                <h6>Last 30 days</h6>
+                <div class="col-md-3 col-lg-3 p-0 m-0">
+                  <div class="card comp-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h6 class="smaller-heading">Calls</h6>
+                          <h3 class="bold-bigger">4.4 m</h3>
+                          <p class="smaller-heading">44056065</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-3 col-lg-3 p-0 m-0">
+                  <div class="card comp-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h6 class="smaller-heading">Phantom</h6>
+                          <h3 class="bold-bigger">65%</h3>
+                          <p class="smaller-heading">2525250</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-3 col-lg-3 p-0 m-0">
+                  <div class="card comp-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h6 class="smaller-heading">Target</h6>
+                          <h3 class="bold-bigger">65%</h3>
+                          <p class="smaller-heading">1545350</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-3 col-lg-3 p-0 m-0">
+                  <div class="card comp-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h6 class="smaller-heading">By Agent</h6>
+                          <h3 class="bold-bigger">50%</h3>
+                          <p class="smaller-heading">12125268</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-12 mt-20">
-              <div id="last_hour_trend_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-12 text-center white-block-bottom">
-              <a href=""><span class="text-end" style="text-decoration: line-through; color: #B56FB4">History</span></a>
-            </div>
           </div>
         </div>
-      </div>
-    </div>
-
-
-    <!----------------Agent Hourly Shifting Report (Heat Map)------>
-
-    <div class="col-lg-12 white-block mt-30">
-      <div class="row">
-        <div class="d-flex justify-content-between mb-3">
-          <div class="bd-highlight titleDB">
-            <h2>Call Landing Report (Heat Map)</h2>
-          </div>
-          <div id="reportrange8" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span></span> <i class="fa fa-caret-down"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="hourly_shift_heat_map_div" style="width: 100%; height: 390px;"></div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-    <!---------------------Call Traffic and map----------------->
-
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB" style="height: 100%;">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Division</th>
-                  <th>No Of Calls</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-bordered">
-                  <td>Dhaka</td>
-                  <td>100</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Chittagong</td>
-                  <td>30</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Sylhet</td>
-                  <td>40</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Mymensingh</td>
-                  <td>25</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Barisal</td>
-                  <td>80</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Khulna</td>
-                  <td>40</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Rajshahi</td>
-                  <td>25</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Rangpur</td>
-                  <td>20</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>Call by Location (Division)</h2>
-              </div>
-              <div id="reportrange5"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="call_Location_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-
-
-
-
-
-    <!--Agent Hourly Shifting Report---------->
-
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB" style="height: 100%;">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Hourly Call Handling Report</th>
-                  <th>No Of Calls</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-bordered">
-                  <td>Call Landed</td>
-                  <td>100</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Call Target</td>
-                  <td>30</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Call Abandoned</td>
-                  <td>40</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Call Answered</td>
-                  <td>25</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>Hourly Call Handling Report</h2>
-              </div>
-              <div id="reportrange7"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-12">
-                <div id="agent_hourly_shift_div" style="width: 100%; height: 390px;"></div>
+        <div class="row">
+          <div class="justify-content-between mb-3">
+            <div class="bd-highlight titleDB">
+              <h6>Last 7 days</h6>
+              <div class="row">
+                <div class="col-md-3 col-lg-3 p-0 m-0">
+                  <div class="card comp-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h6 class="smaller-heading">MMM</h6>
+                          <h3 class="bold-bigger">4.4 m</h3>
+                          <p class="smaller-heading">44056065</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-3 col-lg-3 p-0 m-0">
+                  <div class="card comp-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h6 class="smaller-heading">Phantom</h6>
+                          <h3 class="bold-bigger">65%</h3>
+                          <p class="smaller-heading">2525250</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-3 col-lg-3 p-0 m-0">
+                  <div class="card comp-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h6 class="smaller-heading">Target</h6>
+                          <h3 class="bold-bigger">65%</h3>
+                          <p class="smaller-heading">1545350</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-3 col-lg-3 p-0 m-0">
+                  <div class="card comp-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h6 class="smaller-heading">By Agent</h6>
+                          <h3 class="bold-bigger">50%</h3>
+                          <p class="smaller-heading">12125268</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!---------------------Average Call Duration----------------->
-
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB" style="height: 100%;">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Average Call Duration</th>
-                  <th>Minutes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-bordered">
-                  <td>Today Average</td>
-                  <td>2</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Last 7 Days Average</td>
-                  <td>2.5</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Last 30 Days Average</td>
-                  <td>2.5</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-7 col-sm-12  mt-30">
-          <div class="col-lg-12 white-block titleDB minhight" >
-            <div class="d-flex justify-content-between">
-              <h2>Average Call Duration</h2>
-              <div id="reportrange3"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="call_traffic_div" data-url="" style="width: 100%; height: 390px;"></div>
-            </div>
-            <div class="d-flex justify-content-around mb-3 data-Font">
-              <div class="bd-highlight text-center">Average Call Duration(sec)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!---------------------Average Success Ratio (%)----------------->
-
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB" style="height: 100%;">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Average Success Ratio (%)</th>
-                  <th>Percetage</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-bordered">
-                  <td>Today Average</td>
-                  <td>92</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Last 7 Days Average</td>
-                  <td>85</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Last 30 Days Average</td>
-                  <td>85</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-
-        <div class="col-lg-7 col-md-7 col-sm-12  mt-30">
-          <div class="col-lg-12 white-block titleDB minhight">
-            <div class="d-flex justify-content-between">
-              <h2>Average Success Ratio (%)</h2>
-              <div id="reportrange36"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="call_success_div" data-url="" style="width: 100%; height: 390px;"></div>
-            </div>
-            <div class="d-flex justify-content-around mb-3 data-Font">
-              <div class="bd-highlight text-center">Average Success Ratio (%)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 
-    <!--------------------------CQC Call Type------------------------>
-
-    <div>
-      <div class="row">
-
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB" style="height: 100%;">
-            <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>CQC Name</th>
-                  <th>No Of Calls</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-bordered">
-                  <td>Complaints</td>
-                  <td>100</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Incomplete Complaints</td>
-                  <td>30</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Queries</td>
-                  <td>40</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>No Response and Disconnected Call</td>
-                  <td>25</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Complaint Customer Experience</td>
-                  <td>80</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Emergency Assistance</td>
-                  <td>40</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>MODMR</td>
-                  <td>25</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>CQC Call Type</h2>
-              </div>
-              <div id="reportrange35"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="service_type_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-
-    <!--------------------------PCQC------------------------>
-
-    <div>
-      <div class="row">
-        <div class="bd-highlight titleDB">
-          <br>
-          <br>
-          <h3>PCQC (Primary Customer Queue Category)</h3>
-        </div>
-
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>PCQC</th>
-                  <th>No Of Calls</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-bordered">
-                  <td>Notifications</td>
-                  <td>100</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>MODMR</td>
-                  <td>90</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Others</td>
-                  <td>80</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Complaint Customer Experience</td>
-                  <td>70</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Phone</td>
-                  <td>60</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Queries</td>
-                  <td>50</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>Helpline Info</td>
-                  <td>40</td>
-                </tr>
-                <tr class="table-bordered">
-                  <td>No Resposibility and Disconnected Call</td>
-                  <td>30</td>
-                </tr>
-              </tbody>
-            </table>
-            <button id="detailsBtn" class="detailsBtn">Details</button>
-          </div>
-        </div>
-
-        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>PCQC Types</h2>
-              </div>
-              <div id="reportrange44"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="pcqc_heat_map_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div id="popupWindow" class="popup">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-            <th>PCQC</th>
-            <th>No Of PCQC</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-bordered">
-            <td>Notifications</td>
-            <td>100</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>MODMR</td>
-            <td>90</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Others</td>
-            <td>80</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Complaint Customer Experience</td>
-            <td>70</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Phone</td>
-            <td>60</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Queries</td>
-            <td>50</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Helpline Info</td>
-            <td>40</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>No Resposibility and Disconnected Call</td>
-            <td>30</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="d-flex justify-content-center">
-        <button id="closeBtn" class="btn btn-primary">Close</button>
-      </div>
-    </div>
-
-
-    <!--------------------------PCQC word------------------------>
-
-    <div class="col-lg-12 white-block mt-30">
-      <div class="row">
-        <div class="d-flex justify-content-between mb-3">
-          <div class="bd-highlight titleDB">
-            <h2>PCQC (Word Cloud)</h2>
-          </div>
-          <div id="reportrange9" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span></span> <i class="fa fa-caret-down"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="pcqc" style="width: 100%; height: 390px;"></div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <!--------------------------  SPCQC  ------------------------>
-
-    <div>
-      <div class="row">
-        <div class="col-lg-5 col-md-5 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB" style="height: 100%;">
-            <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>SCQC</th>
-                  <th>No Of Calls</th>
-                </tr>
-              </thead>
-              <tr class="table-bordered">
-                <td>Education</td>
-                <td>100</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Rail Sheba</td>
-                <td>30</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Environment Pollution</td>
-                <td>40</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Food Safety</td>
-                <td>25</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Threat After Raising Complaint</td>
-                <td>80</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Holding Taxes/ Trade License</td>
-                <td>40</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Government Property</td>
-                <td>25</td>
-              </tr>
-              <tr class="table-bordered">
-                <td>Waste Management</td>
-                <td>20</td>
-              </tr>
-              </tbody>
-            </table>
-            <button id="detailsBtn2" class="detailsBtn">Details</button>
-          </div>
-        </div>
-
-        <div class="col-lg-7 col-md-7 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>SCQC Types</h2>
-              </div>
-              <div id="reportrange42"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="scqc_heat_map_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div id="popupWindow2" class="popup">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-            <th>SCQC</th>
-            <th>No Of SCQC</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-bordered">
-            <td>Education</td>
-            <td>100</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Rail Sheba</td>
-            <td>30</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Environment Pollution</td>
-            <td>40</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Food Safety</td>
-            <td>25</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Threat After Raising Complaint</td>
-            <td>80</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Holding Taxes/ Trade License</td>
-            <td>40</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Government Property</td>
-            <td>25</td>
-          </tr>
-          <tr class="table-bordered">
-            <td>Waste Management</td>
-            <td>20</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="d-flex justify-content-center">
-        <button id="closeBtn2" class="btn btn-primary">Close</button>
-      </div>
-    </div>
-
-
-    <!--------------------------SCQC word------------------------>
-
-    <div class="col-lg-12 white-block mt-30">
-      <div class="row">
-        <div class="d-flex justify-content-between mb-3">
-          <div class="bd-highlight titleDB">
-            <h2>SCQC (Word Cloud)</h2>
-          </div>
-          <div id="reportrange43" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span></span> <i class="fa fa-caret-down"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="scqc_cloud" style="width: 100%; height: 390px;"></div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <!--sms report-->
-
-    <div>
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block titleDB">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>SMS Report</h2>
-              </div>
-              <div id="reportrange11"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div id="sms_report_pie_chart_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 col-md-6 col-sm-12 mt-30">
-          <div class="col-lg-12 white-block">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>SMS Report</h2>
-              </div>
-              <div id="reportrange12"
-                style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
-              </div>
-            </div>
-
-            <div class="col-lg-12">
-              <div id="sms_report_bar_chart_div" style="width: 100%; height: 390px;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--------------------------SMS Hourly Report------------------------>
-
-    <div class="col-lg-12 white-block mt-30">
-      <div class="row">
-        <div class="d-flex justify-content-between mb-3">
-          <div class="bd-highlight titleDB">
-            <h2>SMS Report (Hourly)</h2>
-          </div>
-          <div id="reportrange41" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span></span> <i class="fa fa-caret-down"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="sms_hourly" style="width: 100%; height: 390px;"></div>
-        </div>
-      </div>
-    </div>
   </main>
 
-  <script src="amCharts/log_report.js"></script>
-  <script src="amCharts/last_hour_trend.js"></script>
-  <script src="amCharts/area_chart.js"></script>
-  <script src="amCharts/call_traffic.js"></script>
-  <script src="amCharts/cqc.js"></script>
-  <script src="amCharts/word_cloud.js"></script>
-  <script src="amCharts/hour_shifting.js"></script>
-  <script src="amCharts/hourly_shift_heat_map.js"></script>
-  <script src="amCharts/pcqc.js"></script>
-  <script src="amCharts/pcqc_heat_map.js"></script>
-  <script src="amCharts/scqc_heat_map.js"></script>
-  <script src="amCharts/sms_report.js"></script>
-  <script src="amCharts/sms_bar.js"></script>
-  <script src="amCharts/locationMap.js"></script>
-  <script src="amCharts/call_success.js"></script>
-  <script src="amCharts/pcqc copy.js"></script>
-  <script src="amCharts/sms_hourly.js"></script>
-  <script>
-    // Get the elements
-    var detailsBtn = document.getElementById('detailsBtn');
-    var popupWindow = document.getElementById('popupWindow');
-    var popupTable = document.getElementById('popupTable');
+  <script src="charts/stacked_area.js"></script>
+  <script src="charts/spark_line.js"></script>
+  <script src="charts/spark_line2.js"></script>
+  <script src="charts/spark_line3.js"></script>
+  <script src="charts/spark_line4.js"></script>
+  <script src="charts/spark_line5.js"></script>
+  <script src="charts/spark_line6.js"></script>
+  <script src="charts/spark_line7.js"></script>
+  <script src="charts/spark_line8.js"></script>
 
-    var detailsBtn2 = document.getElementById('detailsBtn2');
-    var popupWindow2 = document.getElementById('popupWindow2');
-    var popupTable2 = document.getElementById('popupTable2');
 
-    var closeBtn2 = document.getElementById('closeBtn2');
 
-    // Function to show the pop-up window
-    function showPopup() {
-      popupWindow.style.display = 'block';
-    }
-
-    // Function to close the pop-up window
-    function closePopup() {
-      popupWindow.style.display = 'none';
-    }
-
-    // Function to show the pop-up window
-    function showPopup() {
-      popupWindow2.style.display = 'block';
-    }
-    // Function to close the pop-up window
-    function closePopup() {
-      popupWindow2.style.display = 'none';
-    }
-
-    // Attach event listeners
-    detailsBtn.addEventListener('click', showPopup);
-    closeBtn.addEventListener('click', closePopup);
-    detailsBtn2.addEventListener('click', showPopup);
-    closeBtn2.addEventListener('click', closePopup);
-  </script>
 
 </body>
 
