@@ -66,7 +66,7 @@ am5.ready(function() {
           valueXField: "date",
           tooltip: am5.Tooltip.new(root, {
             pointerOrientation: "horizontal",
-            labelText: "{valueY}"
+            labelText: "Offered : {valueY}"
           })
         })
       );

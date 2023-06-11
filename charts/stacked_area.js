@@ -34,99 +34,99 @@ am5.ready(function() {
     // The data
     var data = [{
       "year": "1994",
-      "cars": 1587,
-      "motorcycles": 650,
-      "bicycles": 121
+      "agent": 1587,
+      "transferred": 650,
+      "phantom": 121
     }, {
       "year": "1995",
-      "cars": 1567,
-      "motorcycles": 683,
-      "bicycles": 146
+      "agent": 1567,
+      "transferred": 683,
+      "phantom": 146
     }, {
       "year": "1996",
-      "cars": 1617,
-      "motorcycles": 691,
-      "bicycles": 138
+      "agent": 1617,
+      "transferred": 691,
+      "phantom": 138
     }, {
       "year": "1997",
-      "cars": 1630,
-      "motorcycles": 642,
-      "bicycles": 127
+      "agent": 1630,
+      "transferred": 642,
+      "phantom": 127
     }, {
       "year": "1998",
-      "cars": 1660,
-      "motorcycles": 699,
-      "bicycles": 105
+      "agent": 1660,
+      "transferred": 699,
+      "phantom": 105
     }, {
       "year": "1999",
-      "cars": 1683,
-      "motorcycles": 721,
-      "bicycles": 109
+      "agent": 1683,
+      "transferred": 721,
+      "phantom": 109
     }, {
       "year": "2000",
-      "cars": 1691,
-      "motorcycles": 737,
-      "bicycles": 112
+      "agent": 1691,
+      "transferred": 737,
+      "phantom": 112
     }, {
       "year": "2001",
-      "cars": 1298,
-      "motorcycles": 680,
-      "bicycles": 101
+      "agent": 1298,
+      "transferred": 680,
+      "phantom": 101
     }, {
       "year": "2002",
-      "cars": 1275,
-      "motorcycles": 664,
-      "bicycles": 97
+      "agent": 1275,
+      "transferred": 664,
+      "phantom": 97
     }, {
       "year": "2003",
-      "cars": 1246,
-      "motorcycles": 648,
-      "bicycles": 93
+      "agent": 1246,
+      "transferred": 648,
+      "phantom": 93
     }, {
       "year": "2004",
-      "cars": 1318,
-      "motorcycles": 697,
-      "bicycles": 111
+      "agent": 1318,
+      "transferred": 697,
+      "phantom": 111
     }, {
       "year": "2005",
-      "cars": 1213,
-      "motorcycles": 633,
-      "bicycles": 87
+      "agent": 1213,
+      "transferred": 633,
+      "phantom": 87
     }, {
       "year": "2006",
-      "cars": 1199,
-      "motorcycles": 621,
-      "bicycles": 79
+      "agent": 1199,
+      "transferred": 621,
+      "phantom": 79
     }, {
       "year": "2007",
-      "cars": 1110,
-      "motorcycles": 210,
-      "bicycles": 81
+      "agent": 1110,
+      "transferred": 210,
+      "phantom": 81
     }, {
       "year": "2008",
-      "cars": 1165,
-      "motorcycles": 232,
-      "bicycles": 75
+      "agent": 1165,
+      "transferred": 232,
+      "phantom": 75
     }, {
       "year": "2009",
-      "cars": 1145,
-      "motorcycles": 219,
-      "bicycles": 88
+      "agent": 1145,
+      "transferred": 219,
+      "phantom": 88
     }, {
       "year": "2010",
-      "cars": 1163,
-      "motorcycles": 201,
-      "bicycles": 82
+      "agent": 1163,
+      "transferred": 201,
+      "phantom": 82
     }, {
       "year": "2011",
-      "cars": 1180,
-      "motorcycles": 285,
-      "bicycles": 87
+      "agent": 1180,
+      "transferred": 285,
+      "phantom": 87
     }, {
       "year": "2012",
-      "cars": 1159,
-      "motorcycles": 277,
-      "bicycles": 71
+      "agent": 1159,
+      "transferred": 277,
+      "phantom": 71
     }];
     
     
@@ -172,9 +172,9 @@ am5.ready(function() {
       series.appear(1000);
     }
     
-    createSeries("Cars", "cars");
-    createSeries("Motorcycles", "motorcycles");
-    createSeries("Bicycles", "bicycles");
+    createSeries("By Agent", "agent");
+    createSeries("transferred Calls", "transferred");
+    createSeries("Phantom Calls", "phantom");
     
     // Add scrollbar
     // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
@@ -205,7 +205,7 @@ am5.ready(function() {
     
     rangeDataItem.get("label").setAll({
       inside: true,
-      text: "Fines for speeding increased",
+      text: "Cyclone Mocha",
       rotation: 90,
       centerX: am5.p100,
       centerY: am5.p100,
@@ -235,7 +235,7 @@ am5.ready(function() {
     
     rangeDataItem2.get("label").setAll({
       inside: true,
-      text: "Motorcycle fee introduced",
+      text: "Cyclone Biporjoy",
       rotation: 90,
       centerX: am5.p100,
       centerY: am5.p100,
