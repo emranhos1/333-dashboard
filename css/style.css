@@ -1,24 +1,48 @@
 .smaller-heading {
-	font-size: smaller;
+    font-size: 0.6em;
 }
 
 .bold-bigger {
-	font-weight: bold;
-	font-size: larger;
+    font-weight: bold;
+    font-size: larger;
 }
 
 
 .card-body {
-	height: auto;
+    height: auto;
 }
 
 .card-body h6,
 .card-body h3,
 .card-body p {
-	white-space: normal;
-	word-wrap: break-word;
+    white-space: normal;
+    word-wrap: break-word;
 }
+
 .comp-card {
-	height: 100px;
-	margin-right: 5px;
+    height: 110px;
+    margin-right: 5px;
 }
+
+.ball {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blue;
+    margin-right: 5px;
+}
+
+.text {
+    display: inline-block;
+    text-align: center;
+}
+
+.ball {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    margin-right: 10px;
+}
+

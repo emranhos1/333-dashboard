@@ -17,31 +17,42 @@
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/custom1.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
-  <script src="amCharts/jquery.min.js"></script>
-  <script src="date.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>
 
   <!-- Resources for word cloud -->
   <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
 
   <!-- Resources for tree map -->
-  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
-  <!-- pie -->
-  <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
   <!-- bar -->
-  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+
   <!---map-->
   <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
 
+
   <!-- google chart -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+
+
 </head>
 
 <body>
@@ -82,10 +93,10 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="container-fluid" style="width: 95% !important;">
 
     <div class="row">
-      <div class="col-lg-8 white-block mt-30">
+      <div class="col-lg-8 white-block mt-30 border">
 
         <!-- call stat heading -->
         <div class="row">
@@ -102,6 +113,9 @@
             <div id="stacked_area_div" data-url="" style="width: 100%; height: 390px;"></div>
           </div>
         </div>
+
+        <br>
+        <br>
 
         <!-- call spark chart -->
         <div class="row">
@@ -153,7 +167,7 @@
 
 
       <!-- last 30 days card -->
-      <div class="col-lg-4 white-block mt-30">
+      <div class="col-lg-4 white-block mt-30 border">
         <div class="row">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
@@ -172,7 +186,7 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-md-3 col-lg-3 p-0 m-0">
                   <div class="card comp-card">
                     <div class="card-body">
@@ -186,13 +200,13 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-md-3 col-lg-3 p-0 m-0">
                   <div class="card comp-card">
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h6 class="smaller-heading">Target</h6>
+                          <h6 class="smaller-heading">Transferred</h6>
                           <h3 class="bold-bigger">65%</h3>
                           <p class="smaller-heading">1545350</p>
                         </div>
@@ -200,7 +214,7 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-md-3 col-lg-3 p-0 m-0">
                   <div class="card comp-card">
                     <div class="card-body">
@@ -218,6 +232,7 @@
             </div>
           </div>
         </div>
+        <!-- last 7 days card -->
         <div class="row">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
@@ -228,7 +243,7 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h6 class="smaller-heading">MMM</h6>
+                          <h6 class="smaller-heading">Calls</h6>
                           <h3 class="bold-bigger">4.4 m</h3>
                           <p class="smaller-heading">44056065</p>
                         </div>
@@ -236,7 +251,7 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-md-3 col-lg-3 p-0 m-0">
                   <div class="card comp-card">
                     <div class="card-body">
@@ -250,13 +265,13 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-md-3 col-lg-3 p-0 m-0">
                   <div class="card comp-card">
                     <div class="card-body">
                       <div class="row">
                         <div class="col">
-                          <h6 class="smaller-heading">Target</h6>
+                          <h6 class="smaller-heading">Transferred</h6>
                           <h3 class="bold-bigger">65%</h3>
                           <p class="smaller-heading">1545350</p>
                         </div>
@@ -264,7 +279,7 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-md-3 col-lg-3 p-0 m-0">
                   <div class="card comp-card">
                     <div class="card-body">
@@ -282,11 +297,134 @@
             </div>
           </div>
         </div>
+
+        <!-- last 24 hours card -->
+        <div class="row">
+          <div class="justify-content-between mb-3">
+            <div class="bd-highlight titleDB">
+              <h6>Last 24 Hours</h6>
+            </div>
+            <div class="col-lg-12">
+              <div id="pie_chart_div" style="width: 100%; height: 250px;"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="justify-content-between mb-3">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Phantom</td>
+                  <td>2500</td>
+                  <td class="percentage positive">25%</td>
+                </tr>
+                <tr>
+                  <td>Transferred</td>
+                  <td>25000</td>
+                  <td class="percentage positive">30%</td>
+                </tr>
+                <tr>
+                  <td>Agent</td>
+                  <td>25520</td>
+                  <td>
+                    25%
+                    <span class="glyphicon glyphicon-arrow-up" style="color: green;"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-lg-4 white-block mt-30 border border">
+        <div>
+          <div id="radar_chart_div" style="  width: 100%; height: 500px;">IVR Channel Statistics</div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-8 white-block mt-30 border border" >
+        <div>
+          <div id="radar_chart_div" style="  width: 100%; height: 500px;"></div>
+        </div>
       </div>
 
 
 
+
+    </div>
+
+
+    <!-- agent chart -->
+    <div class="row">
+      <div class="col-lg-8 white-block mt-30 border">
+        <div>
+          <div id="agent_chart_div" style="  width: 100%; height: 500px;"></div>
+        </div>
+      </div>
+
+      <!-- agent table  -->
+      <div class="col-lg-4 white-block mt-30 border">
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Offered</th>
+                <th>Target</th>
+                <th>Abandoned</th>
+                <th>Answered</th>
+                <th>No of Agents</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>70</td>
+                <td>60</td>
+                <td>50</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>60</td>
+                <td>50</td>
+                <td>40</td>
+                <td>30</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>40</td>
+                <td>30</td>
+                <td>20</td>
+                <td>20</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+
+    </div>
+
+
+
   </main>
+
 
   <script src="charts/stacked_area.js"></script>
   <script src="charts/spark_line.js"></script>
@@ -297,6 +435,10 @@
   <script src="charts/spark_line6.js"></script>
   <script src="charts/spark_line7.js"></script>
   <script src="charts/spark_line8.js"></script>
+  <script src="charts/pie.js"></script>
+  <script src="charts/radar.js"></script>
+  <script src="charts/agent.js"></script>
+
 
 
 
