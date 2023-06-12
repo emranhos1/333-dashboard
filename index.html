@@ -51,7 +51,12 @@
   <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
-
+  <script src="js/date.js"></script>
+  <!----date-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
 </head>
 
@@ -99,10 +104,21 @@
       <div class="col-lg-8 white-block mt-30 border">
 
         <!-- call stat heading -->
-        <div class="row">
-          <div class="d-flex justify-content-between mb-3">
-            <div class="bd-highlight titleDB">
-              <h2>Call Statistics</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <div class="d-flex justify-content-between mb-3">
+                <div class="bd-highlight titleDB">
+                  <h2>Call Statistics</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div id="reportrange2" class="d-flex justify-content-end"
+                style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc; margin-top: 10px">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -120,44 +136,44 @@
         <!-- call spark chart -->
         <div class="row" style="height: 38%;">
           <div class="col-md-3 col-lg-3 border">
-            <h6 class="smaller-heading">Calls</h6>
+            <h6 class="small-heading">Calls</h6>
             <span class="bold-bigger">12500</span>
             <div id="spark_line_dev1"></div>
           </div>
           <div class="col-md-3 col-lg-3 border">
-            <h6 class="smaller-heading">Average success rate</h6>
+            <h6 class="small-heading">Average success rate</h6>
             <span class="bold-bigger">80%</span>
             <div id="spark_line_dev2"></div>
           </div>
           <div class="col-md-3 col-lg-3 border">
-            <h6 class="smaller-heading">Average call duration</h6>
+            <h6 class="small-heading">Average call duration</h6>
             <span class="bold-bigger">6</span>
             <div id="spark_line_dev3"></div>
           </div>
           <div class="col-md-3 col-lg-3 border">
-            <h6 class="smaller-heading">Service Level</h6>
+            <h6 class="small-heading">Service Level</h6>
             <span class="bold-bigger">52</span>
             <div id="spark_line_dev4"></div>
           </div>
           <div class="w-100"></div>
 
           <div class="col-md-3 col-lg-3 border">
-            <h6 class="smaller-heading">Abandon rate</h6>
+            <h6 class="small-heading">Abandon rate</h6>
             <span class="bold-bigger">20%</span>
             <div id="spark_line_dev5"></div>
           </div>
           <div class="col-md-3 col-lg-3 border">
-            <h6 class="smaller-heading">Average handle time</h6>
+            <h6 class="small-heading">Average handle time</h6>
             <span class="bold-bigger">2</span>
             <div id="spark_line_dev6"></div>
           </div>
           <div class="col-md-3 col-lg-3 border">
-            <h6 class="smaller-heading">Average wait time</h6>
+            <h6 class="small-heading">Average wait time</h6>
             <span class="bold-bigger">2</span>
             <div id="spark_line_dev7"></div>
           </div>
           <div class="col-md-3 col-lg-3 border">
-            <h6 class="smaller-heading">Phantom Call</h6>
+            <h6 class="small-heading">Phantom Call</h6>
             <span class="bold-bigger">1200</span>
             <div id="spark_line_dev8"></div>
           </div>
@@ -172,7 +188,7 @@
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
               <div class="row">
-                <h6>Last 30 days</h6>
+                <h6 class="text-center font-weight-bold">Last 30 days</h6>
                 <div class="col-md-3 col-lg-3 p-0 m-0">
                   <div class="card comp-card">
                     <div class="card-body">
@@ -236,7 +252,7 @@
         <div class="row">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
-              <h6>Last 7 days</h6>
+              <h6 class="text-center font-weight-bold">Last 7 days</h6>
               <div class="row">
                 <div class="col-md-3 col-lg-3 p-0 m-0">
                   <div class="card comp-card">
@@ -302,7 +318,7 @@
         <div class="row">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
-              <h6>Last 24 Hours</h6>
+              <h6 class="text-center font-weight-bold">Last 24 Hours</h6>
             </div>
             <div class="col-lg-12">
               <div id="pie_chart_div" style="width: 100%; height: 330px;"></div>
@@ -343,14 +359,36 @@
 
 
 
+    <!-- IVR -->
     <div class="row">
       <div class="col-lg-5 white-block mt-30 border border">
+        <div class="container">
+          <div class="row">
+            <div class="col-5">
+              <div class="d-flex justify-content-between mb-3">
+                <div class="bd-highlight titleDB">
+                  <h2>IVR Channel Statistics</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-7">
+              <div id="reportrange1" class="d-flex justify-content-end"
+                style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc;">
+                <i class="fa fa-calendar"></i>&nbsp;
+                <span></span> <i class="fa fa-caret-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div>
-          <div id="radar_chart_div" style="  width: 100%; height: 500px;">IVR Channel Statistics</div>
+          <div id="radar_chart_div" style="  width: 100%; height: 500px;" class="font-weight-bold"></div>
         </div>
       </div>
 
 
+
+      <!-- IVR table -->
       <div class="col-lg-7 white-block mt-30 border border">
         <div>
           <table class="table">
@@ -364,8 +402,6 @@
                 <th>Abandoned</th>
                 <th>Answered</th>
               </tr>
-
-
             </thead>
             <tbody>
               <tr>
@@ -453,6 +489,7 @@
             </tbody>
 
           </table>
+          <button class="btn btn-primary float-end">more</button>
 
         </div>
 
@@ -461,22 +498,61 @@
     </div>
 
 
+    <!-- IVR line chart -->
     <div class="row">
-      <div class="col-lg-4 white-block mt-30 border">
-        <img src="images/bd_map.jpeg" alt="Map of Bangladesh" style="width: 100%; height: 800px;">
+      <div class="col-lg-12 white-block mt-30 border">
+        <div class="row">
+          <div class="col-9">
+            <h4>IVR Channel Statistics</h4>
+          </div>
+          <div class="col-3">
+            <div id="reportrange4" class="d-flex justify-content-end"
+              style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc;">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-3">
+            <h4>list</h4>
+          </div>
+          <div class="col-5">
+            <h4>chart</h4>
+          </div>
+          <div class="col-4">
+            <h4>table</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- map -->
+    <div class="row">
+      <div class="col-lg-6 white-block mt-30 border">
+        <div class="row">
+          <h4>Heat Map</h4>
+        </div>
+        <img src="images/bd_map.jpeg" alt="Map of Bangladesh" style="width: 100%; height: auto;">
       </div>
 
-      <div class="col-lg-8 white-block mt-30 border">
+
+      <!-- District wise table -->
+      <div class="col-lg-6 white-block mt-30 border">
         <div>
-          <table class="table">
-            <thead>
+          <table class="table table-bordered">
+            <thead class="font-weight-bold">
               <tr>
-                <th>District</th>
-                <th>Offered</th>
-                <th>Target</th>
-                <th>Abandoned</th>
-                <th>Answered</th>
-                <th>No of Agents</th>
+                <td>District</td>
+                <td>Calls</td>
+                <td>%</td>
+                <td>Education</td>
+                <td>Environment Pollution</td>
+                <td>Food Safety</td>
+                <td>Threat After Raising Complaint</td>
               </tr>
             </thead>
             <tbody>
@@ -487,6 +563,7 @@
                 <td>20</td>
                 <td>40</td>
                 <td>20</td>
+                <td>10</td>
               </tr>
               <tr>
                 <td>Munshigonj</td>
@@ -495,6 +572,7 @@
                 <td>50</td>
                 <td>40</td>
                 <td>20</td>
+                <td>12</td>
               </tr>
               <tr>
                 <td>Barishal</td>
@@ -503,6 +581,7 @@
                 <td>40</td>
                 <td>30</td>
                 <td>20</td>
+                <td>15</td>
               </tr>
               <tr>
                 <td>Sylhet</td>
@@ -511,9 +590,317 @@
                 <td>30</td>
                 <td>20</td>
                 <td>20</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>Feni</td>
+                <td>55</td>
+                <td>45</td>
+                <td>35</td>
+                <td>25</td>
+                <td>22</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Comilla</td>
+                <td>65</td>
+                <td>55</td>
+                <td>45</td>
+                <td>35</td>
+                <td>23</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>Noakhali</td>
+                <td>58</td>
+                <td>47</td>
+                <td>37</td>
+                <td>27</td>
+                <td>21</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>Chittagong</td>
+                <td>70</td>
+                <td>80</td>
+                <td>30</td>
+                <td>45</td>
+                <td>25</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Cox's Bazar</td>
+                <td>75</td>
+                <td>65</td>
+                <td>35</td>
+                <td>55</td>
+                <td>28</td>
+                <td>17</td>
+              </tr>
+              <tr>
+                <td>Rangamati</td>
+                <td>68</td>
+                <td>58</td>
+                <td>40</td>
+                <td>38</td>
+                <td>26</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>Khagrachhari</td>
+                <td>53</td>
+                <td>42</td>
+                <td>34</td>
+                <td>23</td>
+                <td>18</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Rajshahi</td>
+                <td>85</td>
+                <td>95</td>
+                <td>25</td>
+                <td>50</td>
+                <td>30</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>Natore</td>
+                <td>62</td>
+                <td>52</td>
+                <td>42</td>
+                <td>32</td>
+                <td>24</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>Bogra</td>
+                <td>63</td>
+                <td>53</td>
+                <td>43</td>
+                <td>33</td>
+                <td>23</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>Pabna</td>
+                <td>55</td>
+                <td>45</td>
+                <td>35</td>
+                <td>25</td>
+                <td>22</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>Naogaon</td>
+                <td>72</td>
+                <td>62</td>
+                <td>52</td>
+                <td>42</td>
+                <td>26</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Jessore</td>
+                <td>68</td>
+                <td>58</td>
+                <td>48</td>
+                <td>38</td>
+                <td>27</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>Jhenaidah</td>
+                <td>50</td>
+                <td>40</td>
+                <td>30</td>
+                <td>20</td>
+                <td>18</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>Kushtia</td>
+                <td>62</td>
+                <td>52</td>
+                <td>42</td>
+                <td>32</td>
+                <td>25</td>
+                <td>17</td>
+              </tr>
+              <tr>
+                <td>Chuadanga</td>
+                <td>45</td>
+                <td>35</td>
+                <td>25</td>
+                <td>15</td>
+                <td>15</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Satkhira</td>
+                <td>58</td>
+                <td>48</td>
+                <td>38</td>
+                <td>28</td>
+                <td>21</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>Faridpur</td>
+                <td>67</td>
+                <td>57</td>
+                <td>47</td>
+                <td>37</td>
+                <td>24</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>Rajbari</td>
+                <td>50</td>
+                <td>40</td>
+                <td>30</td>
+                <td>20</td>
+                <td>20</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Madaripur</td>
+                <td>55</td>
+                <td>45</td>
+                <td>35</td>
+                <td>25</td>
+                <td>22</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>Gopalganj</td>
+                <td>60</td>
+                <td>50</td>
+                <td>40</td>
+                <td>30</td>
+                <td>23</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>Khulna</td>
+                <td>70</td>
+                <td>80</td>
+                <td>30</td>
+                <td>45</td>
+                <td>25</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Bagerhat</td>
+                <td>72</td>
+                <td>62</td>
+                <td>32</td>
+                <td>40</td>
+                <td>18</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>Jhalokati</td>
+                <td>63</td>
+                <td>53</td>
+                <td>43</td>
+                <td>33</td>
+                <td>23</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>Pirojpur</td>
+                <td>65</td>
+                <td>55</td>
+                <td>45</td>
+                <td>35</td>
+                <td>22</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>Bhola</td>
+                <td>58</td>
+                <td>48</td>
+                <td>38</td>
+                <td>28</td>
+                <td>20</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>Patuakhali</td>
+                <td>70</td>
+                <td>60</td>
+                <td>50</td>
+                <td>40</td>
+                <td>25</td>
+                <td>17</td>
+              </tr>
+              <tr>
+                <td>Barguna</td>
+                <td>62</td>
+                <td>52</td>
+                <td>42</td>
+                <td>32</td>
+                <td>24</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>Bandarban</td>
+                <td>55</td>
+                <td>45</td>
+                <td>35</td>
+                <td>25</td>
+                <td>22</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Thakurgaon</td>
+                <td>68</td>
+                <td>58</td>
+                <td>40</td>
+                <td>38</td>
+                <td>26</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>Panchagarh</td>
+                <td>53</td>
+                <td>42</td>
+                <td>34</td>
+                <td>23</td>
+                <td>18</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Dinajpur</td>
+                <td>72</td>
+                <td>62</td>
+                <td>52</td>
+                <td>42</td>
+                <td>30</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>Kurigram</td>
+                <td>63</td>
+                <td>53</td>
+                <td>43</td>
+                <td>33</td>
+                <td>25</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>Lalmonirhat</td>
+                <td>58</td>
+                <td>48</td>
+                <td>38</td>
+                <td>28</td>
+                <td>21</td>
+                <td>15</td>
               </tr>
             </tbody>
           </table>
+          <button class="btn btn-primary float-end">more</button>
 
         </div>
       </div>
@@ -523,10 +910,30 @@
     <!-- agent chart -->
     <div class="row">
       <div class="col-lg-8 white-block mt-30 border">
-        <div>
-          <div id="agent_chart_div" style="  width: 100%; height: 500px;">Agent Statistics</div>
+        <div class="row">
+          <div class="col-8">
+            <h4 class="font-weight-bold">Agent Statistics</h4>
+          </div>
+          <div class="col-4">
+            <div id="reportrange3" class="d-flex justify-content-end"
+              style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc;">
+              <i class="fa fa-calendar"></i>&nbsp;
+              <span></span> <i class="fa fa-caret-down"></i>
+            </div>
+          </div>
         </div>
+
+        <br>
+        <br>
+
+        <div class="row">
+          <div class="border">
+            <div id="chartdiv" data-url="" style="width: 100%; height: 550px;"></div>
+          </div>
+        </div>
+
       </div>
+
       <!-- agent table  -->
       <div class="col-lg-4 white-block mt-30 border">
         <div>
@@ -576,7 +983,6 @@
               </tr>
             </tbody>
           </table>
-
         </div>
       </div>
 

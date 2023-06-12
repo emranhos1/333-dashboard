@@ -1,139 +1,99 @@
-am5.ready(function() {
+am5.ready(function () {
 
-    // Create root element
-    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-    var root = am5.Root.new("agent_chart_div");
-    
-    // Set themes
-    // https://www.amcharts.com/docs/v5/concepts/themes/
-    root.setThemes([
-      am5themes_Animated.new(root)
-    ]);
-    
-    // Create chart
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/
-    var chart = root.container.children.push(
-      am5xy.XYChart.new(root, {
-        focusable: true,
-        panX: true,
-        panY: true,
-        wheelX: "panX",
-        wheelY: "zoomX",
-      pinchZoomX:true
-      })
-    );
-    
-    var easing = am5.ease.linear;
-    chart.get("colors").set("step", 3);
-    
-    // Create axes
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-    var xAxis = chart.xAxes.push(
-      am5xy.DateAxis.new(root, {
-        maxDeviation: 0.1,
-        groupData: false,
-        baseInterval: {
-          timeUnit: "day",
-          count: 1
-        },
-        renderer: am5xy.AxisRendererX.new(root, {}),
-        tooltip: am5.Tooltip.new(root, {})
-      })
-    );
-    
-    function createAxisAndSeries(startValue, opposite) {
-      var yRenderer = am5xy.AxisRendererY.new(root, {
-        opposite: opposite
-      });
-      var yAxis = chart.yAxes.push(
-        am5xy.ValueAxis.new(root, {
-          maxDeviation: 1,
-          renderer: yRenderer
-        })
-      );
-    
-      if (chart.yAxes.indexOf(yAxis) > 0) {
-        yAxis.set("syncWithAxis", chart.yAxes.getIndex(0));
-      }
-    
-      // Add series
-      // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-      var series = chart.series.push(
-        am5xy.LineSeries.new(root, {
-          xAxis: xAxis,
-          yAxis: yAxis,
-          valueYField: "value",
-          valueXField: "date",
-          tooltip: am5.Tooltip.new(root, {
-            pointerOrientation: "horizontal",
-            labelText: "Offered : {valueY}"
-          })
-        })
-      );
-    
-      //series.fills.template.setAll({ fillOpacity: 0.2, visible: true });
-      series.strokes.template.setAll({ strokeWidth: 1 });
-    
-      yRenderer.grid.template.set("strokeOpacity", 0.05);
-      yRenderer.labels.template.set("fill", series.get("fill"));
-      yRenderer.setAll({
-        stroke: series.get("fill"),
-        strokeOpacity: 1,
-        opacity: 1
-      });
-    
-      // Set up data processor to parse string dates
-      // https://www.amcharts.com/docs/v5/concepts/data/#Pre_processing_data
-      series.data.processor = am5.DataProcessor.new(root, {
-        dateFormat: "yyyy-MM-dd",
-        dateFields: ["date"]
-      });
-    
-      series.data.setAll(generateChartData(startValue));
-    }
-    
-    // Add cursor
-    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
-      xAxis: xAxis,
-      behavior: "none"
-    }));
-    cursor.lineY.set("visible", false);
-    
-    // add scrollbar
-    chart.set("scrollbarX", am5.Scrollbar.new(root, {
-      orientation: "horizontal"
-    }));
-    
-    createAxisAndSeries(100, false);
-    createAxisAndSeries(1000, true);
-    createAxisAndSeries(8000, true);
-    
-    // Make stuff animate on load
-    // https://www.amcharts.com/docs/v5/concepts/animations/
-    chart.appear(1000, 100);
-    
-    // Generates random data, quite different range
-    function generateChartData(value) {
-      var data = [];
-      var firstDate = new Date();
-      firstDate.setDate(firstDate.getDate() - 100);
-      firstDate.setHours(0, 0, 0, 0);
-    
-      for (var i = 0; i < 100; i++) {
-        var newDate = new Date(firstDate);
-        newDate.setDate(newDate.getDate() + i);
-    
-        value += Math.round(
-          ((Math.random() < 0.5 ? 1 : -1) * Math.random() * value) / 20
-        );
-    
-        data.push({
-          date: newDate,
-          value: value
-        });
-      }
-      return data;
-    }
-    
-    }); // end am5.ready()
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+// Increase contrast by taking evey second color
+chart.colors.step = 2;
+
+// Add data
+chart.data = generateChartData();
+
+// Create axes
+var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+dateAxis.renderer.minGridDistance = 50;
+
+// Create series
+function createAxisAndSeries(field, name, opposite, bullet) {
+  var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+  
+  var series = chart.series.push(new am4charts.LineSeries());
+  series.dataFields.valueY = field;
+  series.dataFields.dateX = "date";
+  series.strokeWidth = 2;
+  series.yAxis = valueAxis;
+  series.name = name;
+  series.tooltipText = "{name}: [bold]{valueY}[/]";
+  series.tensionX = 0.8;
+  
+  var interfaceColors = new am4core.InterfaceColorSet();
+  
+
+  var bullet = series.bullets.push(new am4charts.CircleBullet());
+  bullet.circle.stroke = interfaceColors.getFor("background");
+  bullet.circle.strokeWidth = 2;
+
+
+  
+  valueAxis.renderer.line.strokeOpacity = 1;
+  valueAxis.renderer.line.strokeWidth = 2;
+  valueAxis.renderer.line.stroke = series.stroke;
+  valueAxis.renderer.labels.template.fill = series.stroke;
+  valueAxis.renderer.opposite = opposite;
+  valueAxis.renderer.grid.template.disabled = true;
+}
+
+createAxisAndSeries("targets", "targets", false, "circle");
+createAxisAndSeries("offered", "offered", false, "circle");
+createAxisAndSeries("answered", "answered", true, "circle");
+createAxisAndSeries("agent", "agent", true, "circle");
+
+// Add legend
+chart.legend = new am4charts.Legend();
+
+// Add cursor
+chart.cursor = new am4charts.XYCursor();
+
+// generate some random data, quite different range
+function generateChartData() {
+  var chartData = [];
+  var firstDate = new Date();
+  firstDate.setDate(firstDate.getDate());
+  firstDate.setHours(0, 0, 0, 0);
+
+  var targets = 160;
+  var offered = 200
+  var answered = 290;
+  var agent = 20;
+
+  for (var i = 0; i < 15; i++) {
+    // we create date objects here. In your data, you can have date strings
+    // and then set format of your dates using chart.dataDateFormat property,
+    // however when possible, use date objects, as this will speed up chart rendering.
+    var newDate = new Date(firstDate);
+    newDate.setDate(newDate.getDate() + i);
+
+    targets += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+    offered += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+    answered += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+    let agent = 0;
+    agent += Math.floor(Math.random() * 6) + 15;
+
+    console.log("agent",agent);
+
+    chartData.push({
+      date: newDate,
+      targets: targets,
+      offered: offered,
+      answered: answered,
+      agent: agent
+    });
+  }
+  return chartData;
+
+}
+}); // end am5.ready()

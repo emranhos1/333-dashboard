@@ -1,5 +1,9 @@
 .smaller-heading {
-    font-size: 1em;
+    font-size: .75em;
+}
+
+.small-heading {
+    font-size: 1.0em;
 }
 
 .bold-bigger {
@@ -45,4 +49,5 @@
     background-color: green;
     margin-right: 10px;
 }
+
 
