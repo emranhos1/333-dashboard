@@ -105,7 +105,7 @@
   <main class="container-fluid" style="width: 95% !important;">
 
     <div class="row">
-      <div class="col-lg-8 white-block mt-30 border">
+      <div class="col-lg-7 white-block mt-30 border">
 
         <!-- call stat heading -->
         <div class="container">
@@ -138,56 +138,54 @@
         <br>
 
         <!-- call spark chart -->
-        <div class="row" style="height: 38%;">
-          <div class="col-md-3 col-lg-3 border">
+        <div class="row" style="height: 30%;">
+          <div class="col-md-3 col-lg-3  spark-border">
             <h6 class="small-heading">Calls</h6>
             <span class="bold-bigger">12500</span>
             <div id="spark_line_dev1"></div>
           </div>
-          <div class="col-md-3 col-lg-3 border">
+          <div class="col-md-3 col-lg-3 spark-border">
             <h6 class="small-heading">Average success rate</h6>
             <span class="bold-bigger">80%</span>
             <div id="spark_line_dev2"></div>
           </div>
-          <div class="col-md-3 col-lg-3 border">
+          <div class="col-md-3 col-lg-3 spark-border">
             <h6 class="small-heading">Average call duration</h6>
             <span class="bold-bigger">6</span>
             <div id="spark_line_dev3"></div>
           </div>
-          <div class="col-md-3 col-lg-3 border">
+          <div class="col-md-3 col-lg-3 spark-border">
             <h6 class="small-heading">Service Level</h6>
             <span class="bold-bigger">52</span>
             <div id="spark_line_dev4"></div>
           </div>
           <div class="w-100"></div>
 
-          <div class="col-md-3 col-lg-3 border">
+          <div class="col-md-3 col-lg-3 spark-border">
             <h6 class="small-heading">Abandon rate</h6>
             <span class="bold-bigger">20%</span>
             <div id="spark_line_dev5"></div>
           </div>
-          <div class="col-md-3 col-lg-3 border">
+          <div class="col-md-3 col-lg-3 spark-border">
             <h6 class="small-heading">Average handle time</h6>
             <span class="bold-bigger">2</span>
             <div id="spark_line_dev6"></div>
           </div>
-          <div class="col-md-3 col-lg-3 border">
+          <div class="col-md-3 col-lg-3 spark-border">
             <h6 class="small-heading">Average wait time</h6>
             <span class="bold-bigger">2</span>
             <div id="spark_line_dev7"></div>
           </div>
-          <div class="col-md-3 col-lg-3 border">
+          <div class="col-md-3 col-lg-3 spark-border">
             <h6 class="small-heading">Phantom Call</h6>
             <span class="bold-bigger">1200</span>
             <div id="spark_line_dev8"></div>
           </div>
         </div>
-
       </div>
 
-
       <!-- last 30 days card -->
-      <div class="col-lg-4 white-block mt-30 border">
+      <div class="col-lg-5 white-block mt-30 border">
         <div class="row">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
@@ -361,21 +359,19 @@
       </div>
     </div>
 
-
-
     <!-- IVR -->
     <div class="row">
-      <div class="col-lg-5 white-block mt-30 border border">
+      <div class="col-lg-8 white-block mt-30 border border">
         <div class="container">
           <div class="row">
-            <div class="col-5">
+            <div class="col-6">
               <div class="d-flex justify-content-between mb-3">
                 <div class="bd-highlight titleDB">
                   <h2>IVR Channel Statistics</h2>
                 </div>
               </div>
             </div>
-            <div class="col-7">
+            <div class="col-6">
               <div id="reportrange1" class="d-flex justify-content-end"
                 style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc;">
                 <i class="fa fa-calendar"></i>&nbsp;
@@ -393,101 +389,71 @@
 
 
       <!-- IVR table -->
-      <div class="col-lg-7 white-block mt-30 border border">
+      <div class="col-lg-4 white-block mt-30 border border">
         <div>
-          <table class="table">
+          <table class="table text-center" style="font-size: 15px;">
             <thead>
               <tr>
                 <th></th>
                 <th></th>
                 <th>Calls</th>
                 <th>%</th>
-                <th>Success</th>
-                <th>Abandoned</th>
-                <th>Answered</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>333-1</td>
-                <td><progress id="file" value="32" max="100"> 32% </progress></td>
+                <td><progress id="file" value="32" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>250</td>
                 <td>25%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
               <tr>
                 <td>333-2</td>
-                <td><progress id="file" value="35" max="100"> 32% </progress></td>
+                <td><progress id="file" value="35" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>301</td>
                 <td>30%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
               <tr>
                 <td>333-3</td>
-                <td><progress id="file" value="30" max="100"> 32% </progress></td>
+                <td><progress id="file" value="30" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>206</td>
                 <td>23%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
               <tr>
                 <td>333-4</td>
-                <td><progress id="file" value="45" max="100"> 32% </progress></td>
+                <td><progress id="file" value="45" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>165</td>
                 <td>40%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
               <tr>
                 <td>333-5</td>
-                <td><progress id="file" value="42" max="100"> 32% </progress></td>
+                <td><progress id="file" value="42" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>139</td>
                 <td>20%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
               <tr>
                 <td>333-6</td>
-                <td><progress id="file" value="25" max="100"> 32% </progress></td>
+                <td><progress id="file" value="25" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>336</td>
                 <td>28%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
               <tr>
                 <td>333-7</td>
-                <td><progress id="file" value="30" max="100"> 32% </progress></td>
+                <td><progress id="file" value="30" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>290</td>
                 <td>15%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
               <tr>
                 <td>333-8</td>
-                <td><progress id="file" value="20" max="100"> 32% </progress></td>
+                <td><progress id="file" value="20" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>325</td>
                 <td>30%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
               <tr>
                 <td>333-9</td>
-                <td><progress id="file" value="22" max="100"> 32% </progress></td>
+                <td><progress id="file" value="22" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>40</td>
                 <td>32%</td>
-                <td>15</td>
-                <td>16</td>
-                <td>18</td>
               </tr>
 
             </tbody>
@@ -500,9 +466,6 @@
 
       </div>
     </div>
-
-
-
 
     <!-- IVR stat testing starts here -->
 
@@ -611,10 +574,6 @@
       </div>
     </div>
 
-
-
-
-
     <!-- IVR stat testing ends here -->
 
     <!-- map -->
@@ -630,7 +589,7 @@
       <!-- District wise table -->
       <div class="col-lg-6 white-block mt-30 border">
         <div>
-          <table class="table table-bordered">
+          <table class="table table-bordered text-center">
             <thead class="font-weight-bold">
               <tr>
                 <td>District</td>
@@ -840,7 +799,6 @@
       </div>
     </div>
 
-
     <!-- agent chart -->
     <div class="row">
       <div class="col-lg-8 white-block mt-30 border">
@@ -872,15 +830,14 @@
       <div class="col-lg-4 white-block mt-30 border">
         <div>
           <div class="table-responsive">
-            <table class="table table-bordered" style="font-size: 12px;">
+            <table class="table table-bordered text-center" style="font-size: 12px;">
               <thead class="font-weight-bold">
-                <tr>
-                  <th>Time</th>
-                  <th>Offered</th>
-                  <th>Target</th>
-                  <th>Abandoned</th>
-                  <th>Answered</th>
-                  <th>No of Agents</th>
+                <th>Time</th>
+                <th>Offered</th>
+                <th>Target</th>
+                <th>Abandoned</th>
+                <th>Answered</th>
+                <th>No of Agents</th>
                 </tr>
               </thead>
               <tbody>
@@ -925,10 +882,7 @@
 
     </div>
 
-
-
   </main>
-
 
   <script src="charts/stacked_area.js"></script>
   <script src="charts/spark_line.js"></script>
@@ -942,14 +896,7 @@
   <script src="charts/pie.js"></script>
   <script src="charts/radar.js"></script>
   <script src="charts/agent.js"></script>
-  <!-- <script src="test.js"></script> -->
   <script src="charts/ivr_line_chart.js"></script>
-
-
-
-
-
-
 
 </body>
 

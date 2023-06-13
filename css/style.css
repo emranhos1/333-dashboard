@@ -50,4 +50,10 @@
     margin-right: 10px;
 }
 
+.spark-border {
+    border-left: 1px solid;
+}
 
+.img.google-visualization-sparkline-selected {
+    background-color: red;
+}
