@@ -60,7 +60,7 @@
 
   <!-- chart js  -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.1.1/chartjs-plugin-zoom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
 </head>
 
@@ -110,14 +110,14 @@
         <!-- call stat heading -->
         <div class="container">
           <div class="row">
-            <div class="col-8">
+            <div class="col-7">
               <div class="d-flex justify-content-between mb-3">
                 <div class="bd-highlight titleDB">
                   <h2>Call Statistics</h2>
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-5">
               <div id="reportrange2" class="d-flex justify-content-end"
                 style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc; margin-top: 10px">
                 <i class="fa fa-calendar"></i>&nbsp;
@@ -506,9 +506,9 @@
 
     <!-- IVR stat testing starts here -->
 
-    <!-- <div class="card bg-white m-t-20">
+    <div class="card bg-white m-t-20">
       <div class="card-block bg-white">
-        <div class="card-header border-bottom txt-18 m-b-20 text-primary">
+        <div class="card-header border-bottom txt-18 m-b-20">
           IVR Channel Statistics
         </div>
         <div class="row mx-1">
@@ -562,7 +562,7 @@
 
 
 
-          <div class="col-6 pl-0 mt-2 border">
+          <!-- <div class="col-6 pl-0 mt-2 border">
             <div class="filter-input filter-buttons card pull-right">
             </div>
 
@@ -572,10 +572,19 @@
               </div>
             </div>
             <canvas id="line-canvas"></canvas>
+          </div> -->
+
+
+
+          <div class="col-6">
+            <canvas id="canvas"></canvas>
           </div>
 
+
+
+
           <div class="col-3">
-            <table class="table">
+            <table class="table" style="font-size: 10px;">
               <thead>
                 <tr>
                   <th>Category</th>
@@ -586,62 +595,26 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>Category - 1</td>
-                  <td>=55600</td>
+                  <td>মোট গৃহীত কল</td>
+                  <td>55600</td>
                   <td>50%</td>
                   <td>45%</td>
                 </tr>
                 <tr>
-                  <td>Category - 2</td>
-                  <td>=55600</td>
+                  <td> সরকারি সেবা প্রদান সংক্রান্ত কল-মাইগভ</td>
+                  <td>55600</td>
                   <td>50%</td>
                   <td>45%</td>
                 </tr>
                 <tr>
-                  <td>Category - 3</td>
-                  <td>=55600</td>
+                  <td>বাল্যবিবাহ প্রতিরোধ সংক্রান্ত কল</td>
+                  <td>55600</td>
                   <td>50%</td>
                   <td>45%</td>
                 </tr>
                 <tr>
-                  <td>Category - 4</td>
-                  <td>=55600</td>
-                  <td>50%</td>
-                  <td>45%</td>
-                </tr>
-                <tr>
-                  <td>Category - 5</td>
-                  <td>=55600</td>
-                  <td>50%</td>
-                  <td>45%</td>
-                </tr>
-                <tr>
-                  <td>Category - 6</td>
-                  <td>=55600</td>
-                  <td>50%</td>
-                  <td>45%</td>
-                </tr>
-                <tr>
-                  <td>Category - 7</td>
-                  <td>=55600</td>
-                  <td>50%</td>
-                  <td>45%</td>
-                </tr>
-                <tr>
-                  <td>Category - 8</td>
-                  <td>=55600</td>
-                  <td>50%</td>
-                  <td>45%</td>
-                </tr>
-                <tr>
-                  <td>Category - 9</td>
-                  <td>=55600</td>
-                  <td>50%</td>
-                  <td>45%</td>
-                </tr>
-                <tr>
-                  <td>Category - 10</td>
-                  <td>=55600</td>
+                  <td>সামাজিক সমস্যা প্রতিরোধ সংক্রান্ত কল</td>
+                  <td>55600</td>
                   <td>50%</td>
                   <td>45%</td>
                 </tr>
@@ -659,44 +632,11 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="js/test.js"></script> -->
+    
+    
 
 
     <!-- IVR stat testing ends here -->
-
-
-    <!-- IVR line chart -->
-    <div class="row">
-      <div class="col-lg-12 white-block mt-30 border">
-        <div class="row">
-          <div class="col-9">
-            <h4>IVR Channel Statistics</h4>
-          </div>
-          <div class="col-3">
-            <div id="reportrange4" class="d-flex justify-content-end"
-              style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc;">
-              <i class="fa fa-calendar"></i>&nbsp;
-              <span></span> <i class="fa fa-caret-down"></i>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-3">
-            <h4>list</h4>
-          </div>
-          <div class="col-5">
-            <h4>chart</h4>
-          </div>
-          <div class="col-4">
-            <h4>table</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     <!-- map -->
     <div class="row">
@@ -913,159 +853,6 @@
                 <td>21</td>
                 <td>13</td>
               </tr>
-              <tr>
-                <td>Faridpur</td>
-                <td>67</td>
-                <td>57</td>
-                <td>47</td>
-                <td>37</td>
-                <td>24</td>
-                <td>16</td>
-              </tr>
-              <tr>
-                <td>Rajbari</td>
-                <td>50</td>
-                <td>40</td>
-                <td>30</td>
-                <td>20</td>
-                <td>20</td>
-                <td>14</td>
-              </tr>
-              <tr>
-                <td>Madaripur</td>
-                <td>55</td>
-                <td>45</td>
-                <td>35</td>
-                <td>25</td>
-                <td>22</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>Gopalganj</td>
-                <td>60</td>
-                <td>50</td>
-                <td>40</td>
-                <td>30</td>
-                <td>23</td>
-                <td>12</td>
-              </tr>
-              <tr>
-                <td>Khulna</td>
-                <td>70</td>
-                <td>80</td>
-                <td>30</td>
-                <td>45</td>
-                <td>25</td>
-                <td>14</td>
-              </tr>
-              <tr>
-                <td>Bagerhat</td>
-                <td>72</td>
-                <td>62</td>
-                <td>32</td>
-                <td>40</td>
-                <td>18</td>
-                <td>13</td>
-              </tr>
-              <tr>
-                <td>Jhalokati</td>
-                <td>63</td>
-                <td>53</td>
-                <td>43</td>
-                <td>33</td>
-                <td>23</td>
-                <td>16</td>
-              </tr>
-              <tr>
-                <td>Pirojpur</td>
-                <td>65</td>
-                <td>55</td>
-                <td>45</td>
-                <td>35</td>
-                <td>22</td>
-                <td>11</td>
-              </tr>
-              <tr>
-                <td>Bhola</td>
-                <td>58</td>
-                <td>48</td>
-                <td>38</td>
-                <td>28</td>
-                <td>20</td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td>Patuakhali</td>
-                <td>70</td>
-                <td>60</td>
-                <td>50</td>
-                <td>40</td>
-                <td>25</td>
-                <td>17</td>
-              </tr>
-              <tr>
-                <td>Barguna</td>
-                <td>62</td>
-                <td>52</td>
-                <td>42</td>
-                <td>32</td>
-                <td>24</td>
-                <td>12</td>
-              </tr>
-              <tr>
-                <td>Bandarban</td>
-                <td>55</td>
-                <td>45</td>
-                <td>35</td>
-                <td>25</td>
-                <td>22</td>
-                <td>14</td>
-              </tr>
-              <tr>
-                <td>Thakurgaon</td>
-                <td>68</td>
-                <td>58</td>
-                <td>40</td>
-                <td>38</td>
-                <td>26</td>
-                <td>13</td>
-              </tr>
-              <tr>
-                <td>Panchagarh</td>
-                <td>53</td>
-                <td>42</td>
-                <td>34</td>
-                <td>23</td>
-                <td>18</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>Dinajpur</td>
-                <td>72</td>
-                <td>62</td>
-                <td>52</td>
-                <td>42</td>
-                <td>30</td>
-                <td>16</td>
-              </tr>
-              <tr>
-                <td>Kurigram</td>
-                <td>63</td>
-                <td>53</td>
-                <td>43</td>
-                <td>33</td>
-                <td>25</td>
-                <td>12</td>
-              </tr>
-              <tr>
-                <td>Lalmonirhat</td>
-                <td>58</td>
-                <td>48</td>
-                <td>38</td>
-                <td>28</td>
-                <td>21</td>
-                <td>15</td>
-              </tr>
             </tbody>
           </table>
           <button class="btn btn-primary float-end">more</button>
@@ -1176,6 +963,8 @@
   <script src="charts/pie.js"></script>
   <script src="charts/radar.js"></script>
   <script src="charts/agent.js"></script>
+  <!-- <script src="test.js"></script> -->
+  <script src="charts/ivr_line_chart.js"></script>
 
 
 
