@@ -60,7 +60,7 @@
 
   <!-- chart js  -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
 
 </head>
 
@@ -524,8 +524,13 @@
           </div>
 
           <div class="col-6">
-            <canvas id="canvas"></canvas>
+            <canvas id="myChart"></canvas>
           </div>
+          <script src="charts/ivr_line_chart.js"></script>
+          <script>
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, config);
+          </script>
 
 
           <div class="col-3">
@@ -566,10 +571,6 @@
               </tbody>
             </table>
           </div>
-
-
-
-
         </div>
       </div>
     </div>
@@ -896,7 +897,6 @@
   <script src="charts/pie.js"></script>
   <script src="charts/radar.js"></script>
   <script src="charts/agent.js"></script>
-  <script src="charts/ivr_line_chart.js"></script>
 
 </body>
 
