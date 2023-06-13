@@ -83,8 +83,6 @@ function generateChartData() {
     let agent = 0;
     agent += Math.floor(Math.random() * 6) + 15;
 
-    console.log("agent",agent);
-
     chartData.push({
       date: newDate,
       targets: targets,
