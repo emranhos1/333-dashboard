@@ -48,7 +48,7 @@ function createAxisAndSeries(field, name, opposite, bullet) {
 }
 
 createAxisAndSeries("targets", "targets", false, "circle");
-createAxisAndSeries("offered", "offered", false, "circle");
+createAxisAndSeries("total_calls", "total_calls", false, "circle");
 createAxisAndSeries("answered", "answered", true, "circle");
 createAxisAndSeries("agent", "agent", true, "circle");
 
@@ -66,7 +66,7 @@ function generateChartData() {
   firstDate.setHours(0, 0, 0, 0);
 
   var targets = 160;
-  var offered = 200
+  var total_calls = 200
   var answered = 290;
   var agent = 20;
 
@@ -78,7 +78,7 @@ function generateChartData() {
     newDate.setDate(newDate.getDate() + i);
 
     targets += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
-    offered += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
+    total_calls += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
     answered += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
     let agent = 0;
     agent += Math.floor(Math.random() * 6) + 15;
@@ -86,7 +86,7 @@ function generateChartData() {
     chartData.push({
       date: newDate,
       targets: targets,
-      offered: offered,
+      total_calls: total_calls,
       answered: answered,
       agent: agent
     });

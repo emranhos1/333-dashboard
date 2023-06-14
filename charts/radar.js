@@ -81,7 +81,7 @@ am5.ready(function () {
   // Set data
   // https://www.amcharts.com/docs/v5/charts/radar-chart/#Setting_data
   var data = [{
-    "country": "333-External Channel",
+    "country": "333-Main Menu",
     "litres": 202
   }, {
     "country": "333-1",
