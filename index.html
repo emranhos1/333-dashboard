@@ -239,7 +239,7 @@
 
       <!-- last 30 days card -->
       <div class="col-lg-5 white-block mt-30 border">
-        <div class="row">
+        <div class="row" style="padding: 2%;">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
               <div class="row">
@@ -250,7 +250,7 @@
                       <div class="row">
                         <div class="col">
                           <h6 class="smaller-heading">Calls</h6>
-                          <h3 class="bold-bigger">4.4 m</h3>
+                          <h3 class="bold-bigger" >4.4 m</h3>
                           <p class="smaller-heading">44056065</p>
                         </div>
                       </div>
@@ -304,7 +304,7 @@
           </div>
         </div>
         <!-- last 7 days card -->
-        <div class="row">
+        <div class="row" style="padding: 2%;">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
               <h6 class="text-center font-weight-bold">Last 7 days</h6>
@@ -537,8 +537,8 @@
           <div class="row">
             <div class="col-12 p-0 mt-2" style="height: 493px;overflow: scroll;">
               <div class="d-flex justify-content-end">
-                <button class="btn mb-2 text-white" style="background: #912C8A;"
-                  onclick="deselectAllLineData()">Reset</button>
+                <!-- <button class="btn mb-2 text-white" style="background: #912C8A;"
+                  onclick="deselectAllLineData()">Reset</button> -->
               </div>
               <div onclick="indicator_wise_line_data('1732')" data-value="খাদ্য ও ত্রাণ সহায়তার জন্য প্রাপ্ত কল"
                 id="indicator-id-1732" class="ml-1 indicator-name pl-4">
@@ -610,12 +610,13 @@
 
       <div class="col-3 white-block mt-30 border border">
         <table class="table border text-center">
-          <thead>
+          <thead class="font-weight-bold">
             <tr>
               <td>Category</td>
               <td>Calls</td>
-              <td>Success</td>
+              <td>Unique</td>
               <td>Repeat</td>
+              <td>Satisfaction</td>
             </tr>
           </thead>
           <tbody>
@@ -624,60 +625,70 @@
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>85%</td>
             </tr>
             <tr>
               <td>Category-2</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>85%</td>
             </tr>
             <tr>
               <td>Category-3</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>95%</td>
             </tr>
             <tr>
               <td>Category-4</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>85%</td>
             </tr>
             <tr>
               <td>Category-5</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>80%</td>
             </tr>
             <tr>
               <td>Category-6</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>95%</td>
             </tr>
             <tr>
               <td>Category-7</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>98%</td>
             </tr>
             <tr>
               <td>Category-8</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>95%</td>
             </tr>
             <tr>
               <td>Category-9</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>90%</td>
             </tr>
             <tr>
               <td>Category-10</td>
               <td>55600</td>
               <td>50%</td>
               <td>45%</td>
+              <td>95%</td>
             </tr>
           </tbody>
         </table>
@@ -943,8 +954,8 @@
       <!-- agent table  -->
       <div class="col-lg-4 white-block mt-30 border">
         <div>
-          <div class="table-responsive">
-            <table class="table table-bordered text-center" style="font-size: 12px;">
+          <table class="table table-bordered text-center">
+            <thead class="font-weight-bold !important">
               <thead>
                 <th>Time</th>
                 <th>Total Calls</th>
