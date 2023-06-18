@@ -18,21 +18,22 @@
   <link href="css/custom.css" rel="stylesheet">
   <link href="css/custom1.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-
   <link href="https://dashboard.a2i.gov.bd/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://dashboard.a2i.gov.bd/pages/css/themes/modern.css" rel="stylesheet">
+  <link href="https://dashboard.a2i.gov.bd/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+
+
   <link class="stylesheet" href="https://dashboard.a2i.gov.bd/assets/css/indicator.css" rel="stylesheet"
     type="text/css" />
 
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
     crossorigin="anonymous"></script>
-  <link href="https://dashboard.a2i.gov.bd/assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet">
 
   <!-- Resources for word cloud -->
   <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
   <script src="https://cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
@@ -43,28 +44,22 @@
   <!-- Resources for tree map -->
   <script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
-  <!-- bar -->
 
-  <!---map-->
-  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
-
-
-  <!-- google chart -->
+  <!--chart -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/geodata/data/countries2.js"></script>
 
   <!----date-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
   <!-- chart js  -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/date.js"></script>
 </head>
 
 <body>
@@ -247,7 +242,7 @@
                       <div class="row">
                         <div class="col">
                           <h6 class="smaller-heading">Calls</h6>
-                          <h3 class="bold-bigger" >4.4 m</h3>
+                          <h3 class="bold-bigger">4.4 m</h3>
                           <p class="smaller-heading">44056065</p>
                         </div>
                       </div>
@@ -446,8 +441,8 @@
               <tr>
                 <th></th>
                 <th></th>
-                <th>Calls</th>
-                <th>%</th>
+                <th class="tableHead">Calls</th>
+                <th class="tableHead">%</th>
               </tr>
             </thead>
             <tbody>
@@ -531,7 +526,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row" style="font-size: 10px;">
             <div class="col-12 p-0 mt-2" style="height: 493px;overflow: scroll;">
               <div class="d-flex justify-content-end">
                 <!-- <button class="btn mb-2 text-white" style="background: #912C8A;"
@@ -605,15 +600,15 @@
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
-      <div class="col-3 white-block mt-30 border border">
-        <table class="table border text-center">
+      <div class="col-3 col-md-3 white-block mt-30 border border">
+        <table class="table table-responsive border text-center">
           <thead class="font-weight-bold">
             <tr>
-              <td>Category</td>
-              <td>Calls</td>
-              <td>Unique</td>
-              <td>Repeat</td>
-              <td>Satisfaction</td>
+              <th class="tableHead">Category</th>
+              <th class="tableHead">Calls</th>
+              <th class="tableHead">Unique</th>
+              <th class="tableHead">Repeat</th>
+              <th class="tableHead">Satisfaction</th>
             </tr>
           </thead>
           <tbody>
@@ -703,7 +698,8 @@
         <div class="row">
           <h4>Heat Map</h4>
         </div>
-        <img src="images/bd_map.jpeg" alt="Map of Bangladesh" style="width: 100%; height: auto;">
+        <!-- <img src="images/bd_map.jpeg" alt="Map of Bangladesh" style="width: 100%; height: auto;"> -->
+        <div id="bd_map_div"></div>
       </div>
 
 
@@ -954,124 +950,125 @@
           <table class="table table-bordered text-center">
             <thead class="font-weight-bold !important">
               <thead>
-                <th>Time</th>
-                <th>Total Calls</th>
-                <th>Target</th>
-                <th>Abandoned</th>
-                <th>Answered</th>
-                <th>No of Agents</th>
+                <tr class="left-align">
+                  <th class="tableHead">Time</th>
+                  <th class="tableHead">Total Calls</th>
+                  <th class="tableHead">Target</th>
+                  <th class="tableHead">Abandoned</th>
+                  <th class="tableHead">Answered</th>
+                  <th class="tableHead">No of Agents</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>01.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>02.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>03.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>04.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>05.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>06.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>07.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>08.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>09.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>10.00</td>
-                  <td>80</td>
-                  <td>90</td>
-                  <td>20</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>11.00</td>
-                  <td>70</td>
-                  <td>60</td>
-                  <td>50</td>
-                  <td>40</td>
-                  <td>20</td>
-                </tr>
-                <tr>
-                  <td>12.00</td>
-                  <td>50</td>
-                  <td>40</td>
-                  <td>30</td>
-                  <td>20</td>
-                  <td>20</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <br>
-          <button class="btn btn-primary float-end">more</button>
+            <tbody>
+              <tr>
+                <td>01.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>02.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>03.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>04.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>05.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>06.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>07.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>08.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>09.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>10.00</td>
+                <td>80</td>
+                <td>90</td>
+                <td>20</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>11.00</td>
+                <td>70</td>
+                <td>60</td>
+                <td>50</td>
+                <td>40</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>12.00</td>
+                <td>50</td>
+                <td>40</td>
+                <td>30</td>
+                <td>20</td>
+                <td>20</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <br>
+        <button class="btn btn-primary float-end">more</button>
       </div>
+    </div>
 
     </div>
 
   </main>
 
-  <script src="https://dashboard.a2i.gov.bd/assets/plugins/jquery/jquery-1.11.1.min.js"></script>
+  <!-- <script src="https://dashboard.a2i.gov.bd/assets/plugins/jquery/jquery-1.11.1.min.js"></script> -->
   <script src="https://dashboard.a2i.gov.bd/assets/plugins/tether/js/tether.min.js"></script>
   <script src="https://dashboard.a2i.gov.bd/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
@@ -1595,7 +1592,7 @@
   <script src="charts/pie.js"></script>
   <script src="charts/radar.js"></script>
   <script src="charts/agent.js"></script>
-  <script src="js/date.js"></script>
+  <script src="charts/bd_map.js"></script>
 
 </body>
 

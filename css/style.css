@@ -1,5 +1,5 @@
 .smaller-heading {
-    font-size: .70em !important; 
+    font-size: .70em !important;
 }
 
 .small-heading {
@@ -53,4 +53,16 @@
 
 .spark-border {
     border-left: 1px solid;
+}
+
+.tableHead {
+    font-weight: bold !important;
+    color: black !important;
+}
+
+
+
+#bd_map_div {
+    width: 100%;
+    height: 900px
 }

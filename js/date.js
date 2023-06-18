@@ -5,10 +5,10 @@ $(function () {
     { id: 'reportrange2', startDate: moment().subtract(7, 'days'), endDate: moment() },
     { id: 'reportrange3', startDate: moment().subtract(7, 'days'), endDate: moment() },
     { id: 'reportrange4', startDate: moment().subtract(7, 'days'), endDate: moment() },
-    { id: 'reportrange4', startDate: moment().subtract(7, 'days'), endDate: moment() },
     { id: 'reportrange5', startDate: moment().subtract(7, 'days'), endDate: moment() },
     { id: 'reportrange6', startDate: moment().subtract(7, 'days'), endDate: moment() },
     { id: 'reportrange7', startDate: moment().subtract(7, 'days'), endDate: moment() },
+    { id: 'reportrange8', startDate: moment().subtract(7, 'days'), endDate: moment() },
   ];
 
   function cb(start, end) {
