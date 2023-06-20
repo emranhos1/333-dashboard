@@ -216,7 +216,7 @@ am5.ready(function() {
     
     
     var rangeDataItem2 = xAxis.makeDataItem({
-      category: "2007"
+      category: "2010"
     });
     
     var range2 = xAxis.createAxisRange(rangeDataItem2);
