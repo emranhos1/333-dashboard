@@ -20,5 +20,5 @@ for (var i = 0; i < 30; i++) {
 }
 var chart = new google.visualization.ImageSparkLine(document.getElementById('spark_line_dev1'));
 
-chart.draw(data, {width: 120, height: 40, showAxisLines: false,  showValueLabels: false, labelPosition: 'left'});
+chart.draw(data, {width: 160, height: 40, showAxisLines: false,  showValueLabels: false, labelPosition: 'left'});
 }

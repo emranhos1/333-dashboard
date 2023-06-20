@@ -69,7 +69,7 @@ am5.ready(function () {
             polygonSeries.set("geoJSON", geodata);
             polygonSeries.data.setAll(data)
 
-            console.log("geoJSON", geodata);
+            console.log("geoJSON", JSON.stringify(geodata));
         });
 
         chart.seriesContainer.children.push(am5.Label.new(root, {

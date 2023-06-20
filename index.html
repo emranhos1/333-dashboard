@@ -156,22 +156,25 @@
         <!-- call stat heading -->
         <div class="container">
           <div class="row">
-            <div class="col-7">
-              <div class="d-flex justify-content-between mb-3">
-                <div class="bd-highlight titleDB">
-                  <h2>Call Statistics</h2>
+            <div class="col-12 col-md-7">
+              <div class="d-flex justify-content-between mb-0">
+                <div class="titleDB">
+                  <h3>Call Statistics</h3>
                 </div>
               </div>
             </div>
-            <div class="col-5">
-              <div id="reportrange2" class="d-flex justify-content-end"
-                style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc; margin-top: 10px">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
+            <div class="col-12 col-md-5">
+              <div id="reportrange2"
+                class="d-flex justify-content-end align-items-center bg-white cursor-pointer border p-1 mt-3"
+                style="border-radius: 5px; cursor: pointer; width: 100%;">
+                <i class="fa fa-calendar mr-2"></i>
+                <span></span>
+                <i class="fa fa-caret-down ml-2"></i>
               </div>
             </div>
           </div>
         </div>
+
 
         <!-- call stat graph -->
         <div class="row">
@@ -180,24 +183,24 @@
           </div>
         </div>
 
-        <br>
-        <br>
+        <hr>
 
         <!-- call spark chart -->
         <div class="row" style="height: 30%;">
-          <div class="col-md-3 col-lg-3  spark-border">
+
+          <div class="col-md-3 col-lg-3">
             <h6 class="small-heading">Calls</h6>
             <span class="bold-bigger">12500</span>
-            <div id="spark_line_dev1"></div>
+            <div id="spark_line_dev1" style="width: 120px; height: 40px;"></div>
           </div>
           <div class="col-md-3 col-lg-3 spark-border">
-            <h6 class="small-heading">Average success rate</h6>
+            <h6 class="small-heading">Avg success rate</h6>
             <span class="bold-bigger">80%</span>
             <div id="spark_line_dev2"></div>
           </div>
           <div class="col-md-3 col-lg-3 spark-border">
-            <h6 class="small-heading">Average call duration</h6>
-            <span class="bold-bigger">6</span>
+            <h6 class="small-heading">Avg call duration</h6>
+            <span class="bold-bigger">00:02:00</span>
             <div id="spark_line_dev3"></div>
           </div>
           <div class="col-md-3 col-lg-3 spark-border">
@@ -207,19 +210,19 @@
           </div>
           <div class="w-100"></div>
 
-          <div class="col-md-3 col-lg-3 spark-border">
+          <div class="col-md-3 col-lg-3">
             <h6 class="small-heading">Abandon rate</h6>
             <span class="bold-bigger">20%</span>
             <div id="spark_line_dev5"></div>
           </div>
           <div class="col-md-3 col-lg-3 spark-border">
-            <h6 class="small-heading">Average handle time</h6>
-            <span class="bold-bigger">2</span>
+            <h6 class="small-heading">Avg handle time</h6>
+            <span class="bold-bigger">00:02:00</span>
             <div id="spark_line_dev6"></div>
           </div>
           <div class="col-md-3 col-lg-3 spark-border">
-            <h6 class="small-heading">Average wait time</h6>
-            <span class="bold-bigger">2</span>
+            <h6 class="small-heading">Avg wait time</h6>
+            <span class="bold-bigger">00:01:00</span>
             <div id="spark_line_dev7"></div>
           </div>
           <div class="col-md-3 col-lg-3 spark-border">
@@ -230,63 +233,48 @@
         </div>
       </div>
 
-      <!-- last 30 days card -->
       <div class="col-lg-5 white-block mt-30 border">
-        <div class="row" style="padding: 2%;">
+        <!-- last 30 days card -->
+        <div class="row" style="padding: 1%;">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
               <div class="row">
                 <h6 class="text-center font-weight-bold">Last 30 days</h6>
-                <div class="col-md-3 col-lg-3 p-0 m-0">
-                  <div class="card comp-card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h6 class="smaller-heading">Calls</h6>
-                          <h3 class="bold-bigger">4.4 m</h3>
-                          <p class="smaller-heading">44056065</p>
+                <div class="container">
+                  <div class="row row-cols-2 no-gutters">
+                    <div class="col-3 col-md-3">
+                      <div class="grid-cell ">
+                        <div>
+                          <h6 class="m-0">Calls</h6>
+                          <h3 class="m-0">75%</h3>
+                          <p class="m-0">45250</p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3 p-0 m-0">
-                  <div class="card comp-card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h6 class="smaller-heading">Phantom</h6>
-                          <h3 class="bold-bigger">65%</h3>
-                          <p class="smaller-heading">2525250</p>
+                    <div class="col-3 col-md-3">
+                      <div class="grid-cell  ">
+                        <div>
+                          <h6 class="m-0">Phantom</h6>
+                          <h3 class="m-0">65%</h3>
+                          <p class="m-0">2525250</p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3 p-0 m-0">
-                  <div class="card comp-card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h6 class="smaller-heading">Transferred</h6>
-                          <h3 class="bold-bigger">65%</h3>
-                          <p class="smaller-heading">1545350</p>
+                    <div class="col-3 col-md-3">
+                      <div class="grid-cell  ">
+                        <div>
+                          <h6 class="m-0">Transferred</h6>
+                          <h3 class="m-0">65%</h3>
+                          <p class="m-0">1545350</p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3 p-0 m-0">
-                  <div class="card comp-card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h6 class="smaller-heading">By Agent</h6>
-                          <h3 class="bold-bigger">50%</h3>
-                          <p class="smaller-heading">12125268</p>
+                    <div class="col-3 col-md-3">
+                      <div class="grid-cell  ">
+                        <div>
+                          <h6 class="m-0">By Agent</h6>
+                          <h3 class="m-0">50%</h3>
+                          <p class="m-0">12125268</p>
                         </div>
                       </div>
                     </div>
@@ -296,62 +284,50 @@
             </div>
           </div>
         </div>
+
+        <hr class="m-0">
+
         <!-- last 7 days card -->
         <div class="row" style="padding: 2%;">
           <div class="justify-content-between mb-3">
             <div class="bd-highlight titleDB">
-              <h6 class="text-center font-weight-bold">Last 7 days</h6>
               <div class="row">
-                <div class="col-md-3 col-lg-3 p-0 m-0">
-                  <div class="card comp-card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h6 class="smaller-heading">Calls</h6>
-                          <h3 class="bold-bigger">4.4 m</h3>
-                          <p class="smaller-heading">44056065</p>
+                <h6 class="text-center font-weight-bold">Last 07 days</h6>
+                <div class="container">
+                  <div class="row row-cols-2 no-gutters">
+                    <div class="col-3 col-md-3">
+                      <div class="grid-cell ">
+                        <div>
+                          <h6 class="m-0">Calls</h6>
+                          <h3 class="m-0">75%</h3>
+                          <p class="m-0">45250</p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3 p-0 m-0">
-                  <div class="card comp-card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h6 class="smaller-heading">Phantom</h6>
-                          <h3 class="bold-bigger">65%</h3>
-                          <p class="smaller-heading">2525250</p>
+                    <div class="col-3 col-md-3">
+                      <div class="grid-cell  ">
+                        <div>
+                          <h6 class="m-0">Phantom</h6>
+                          <h3 class="m-0">65%</h3>
+                          <p class="m-0">2525250</p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3 p-0 m-0">
-                  <div class="card comp-card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h6 class="smaller-heading">Transferred</h6>
-                          <h3 class="bold-bigger">65%</h3>
-                          <p class="smaller-heading">1545350</p>
+                    <div class="col-3 col-md-3">
+                      <div class="grid-cell  ">
+                        <div>
+                          <h6 class="m-0">Transferred</h6>
+                          <h3 class="m-0">65%</h3>
+                          <p class="m-0">1545350</p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div class="col-md-3 col-lg-3 p-0 m-0">
-                  <div class="card comp-card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col">
-                          <h6 class="smaller-heading">By Agent</h6>
-                          <h3 class="bold-bigger">50%</h3>
-                          <p class="smaller-heading">12125268</p>
+                    <div class="col-3 col-md-3">
+                      <div class="grid-cell  ">
+                        <div>
+                          <h6 class="m-0">By Agent</h6>
+                          <h3 class="m-0">50%</h3>
+                          <p class="m-0">12125268</p>
                         </div>
                       </div>
                     </div>
@@ -361,6 +337,8 @@
             </div>
           </div>
         </div>
+
+        <hr class="m-0">
 
         <!-- last 24 hours card -->
         <div class="row">
@@ -380,22 +358,19 @@
             <table class="table">
               <tbody>
                 <tr>
-                  <td>Phantom</td>
-                  <td>20</td>
-                  <td class="percentage positive">20%</td>
+                  <td class="small-heading">Phantom</td>
+                  <td class="small-heading">120</td>
+                  <td class="small-heading">35%</td>
                 </tr>
                 <tr>
-                  <td>Transferred</td>
-                  <td>20</td>
-                  <td class="percentage positive">20%</td>
+                  <td class="small-heading">Transferred</td>
+                  <td class="small-heading ">110</td>
+                  <td class="small-heading">15%</td>
                 </tr>
                 <tr>
-                  <td>Agent</td>
-                  <td>60</td>
-                  <td>
-                    60%
-                    <span class="glyphicon glyphicon-arrow-up" style="color: green;"></span>
-                  </td>
+                  <td class="small-heading">Agent</td>
+                  <td class="small-heading">100</td>
+                  <td class="small-heading">45%</td>
                 </tr>
               </tbody>
             </table>
@@ -407,101 +382,142 @@
 
     <!-- IVR -->
     <div class="row">
-      <div class="col-lg-8 white-block mt-30 border border">
+      <div class="col-lg-6 white-block mt-30 border border">
         <div class="container">
           <div class="row">
-            <div class="col-6">
-              <div class="d-flex justify-content-between mb-3">
-                <div class="bd-highlight titleDB">
-                  <h2>IVR Channel Statistics</h2>
+            <div class="col-12 col-md-6">
+              <div class="d-flex justify-content-between mb-0">
+                <div class="titleDB">
+                  <h3>IVR Channel Statistics</h3>
                 </div>
               </div>
             </div>
-            <div class="col-6">
-              <div id="reportrange1" class="d-flex justify-content-end"
-                style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc;">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span></span> <i class="fa fa-caret-down"></i>
+            <div class="col-12 col-md-6">
+              <div id="reportrange1"
+                class="d-flex justify-content-end align-items-center bg-white cursor-pointer border p-1 mt-3"
+                style="border-radius: 5px; cursor: pointer; width: 100%;">
+                <i class="fa fa-calendar mr-2"></i>
+                <span></span>
+                <i class="fa fa-caret-down ml-2"></i>
               </div>
             </div>
           </div>
         </div>
 
         <div>
-          <div id="radar_chart_div" style="  width: 100%; height: 500px;" class="font-weight-bold"></div>
+          <div id="radar_chart_div" style="  width: 100%; height: 450px;" class="font-weight-bold"></div>
         </div>
       </div>
 
 
 
       <!-- IVR table -->
-      <div class="col-lg-4 white-block mt-30 border border">
+      <div class="col-lg-6 white-block mt-30 border border">
+        <div class="container">
+          <div class="col-12 col-md-12">
+            <div class="d-flex justify-content-between mb-0">
+              <div class="titleDB">
+                <h3>IVR Channel (Tabuler View)</h3>
+              </div>
+            </div>
+          </div>
+        </div>
         <div>
           <table class="table text-center" style="font-size: 15px;">
             <thead>
               <tr>
-                <th></th>
-                <th></th>
-                <th class="tableHead">Calls</th>
-                <th class="tableHead">%</th>
+                <th class="table-head">IVR Channels</th>
+                <th class="table-head"> -- </th>
+                <th class="table-head">Calls</th>
+                <th class="table-head">%</th>
+                <th class="table-head">Successful</th>
+                <th class="table-head">Abandon</th>
+                <th class="table-head">Answered</th>
+
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>333-1</td>
-                <td><progress id="file" value="32" max="100" style="width: 100px;"> 32% </progress></td>
+                <td><progress id="file" value="5" max="100" style="width: 100px;"> 5% </progress></td>
                 <td>250</td>
-                <td>25%</td>
+                <td>5%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
               <tr>
                 <td>333-2</td>
-                <td><progress id="file" value="35" max="100" style="width: 100px;"> 32% </progress></td>
+                <td><progress id="file" value="2" max="100" style="width: 100px;"> 2% </progress></td>
                 <td>301</td>
-                <td>30%</td>
+                <td>2%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
               <tr>
                 <td>333-3</td>
-                <td><progress id="file" value="30" max="100" style="width: 100px;"> 32% </progress></td>
+                <td><progress id="file" value="10" max="100" style="width: 100px;"> 10% </progress></td>
                 <td>206</td>
-                <td>23%</td>
+                <td>10%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
               <tr>
                 <td>333-4</td>
-                <td><progress id="file" value="45" max="100" style="width: 100px;"> 32% </progress></td>
+                <td><progress id="file" value="10" max="100" style="width: 100px;"> 10% </progress></td>
                 <td>165</td>
-                <td>40%</td>
+                <td>10%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
               <tr>
                 <td>333-5</td>
-                <td><progress id="file" value="42" max="100" style="width: 100px;"> 32% </progress></td>
+                <td><progress id="file" value="7" max="100" style="width: 100px;"> 7% </progress></td>
                 <td>139</td>
-                <td>20%</td>
+                <td>7%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
               <tr>
                 <td>333-6</td>
-                <td><progress id="file" value="25" max="100" style="width: 100px;"> 32% </progress></td>
+                <td><progress id="file" value="3" max="100" style="width: 100px;"> 3% </progress></td>
                 <td>336</td>
-                <td>28%</td>
+                <td>3%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
               <tr>
                 <td>333-7</td>
                 <td><progress id="file" value="30" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>290</td>
                 <td>15%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
               <tr>
                 <td>333-8</td>
                 <td><progress id="file" value="20" max="100" style="width: 100px;"> 32% </progress></td>
                 <td>325</td>
                 <td>30%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
               <tr>
                 <td>333-9</td>
-                <td><progress id="file" value="22" max="100" style="width: 100px;"> 32% </progress></td>
+                <td><progress id="file" value="12" max="100" style="width: 100px;"> 12% </progress></td>
                 <td>40</td>
-                <td>32%</td>
+                <td>12%</td>
+                <td>125</td>
+                <td>125</td>
+                <td>190</td>
               </tr>
-
             </tbody>
 
           </table>
@@ -514,76 +530,61 @@
       </div>
     </div>
 
-    <!-- IVR stat testing starts here -->
-
+    <!-- CQC Wise Statistics -->
     <div class="row">
-      <div class="col-lg-3 white-block mt-30 border border">
+      <div class="col-lg-4 white-block mt-30 border border">
         <div class="container">
-          <div class="row">
-            <div class="d-flex justify-content-between mb-3">
-              <div class="bd-highlight titleDB">
-                <h2>IVR Channel Statistics</h2>
+          <div class="col-12 col-md-12">
+            <div class="d-flex justify-content-between mb-0">
+              <div class="titleDB">
+                <h3>SCQC Wise Statistics</h3>
               </div>
             </div>
           </div>
 
           <div class="row" style="font-size: 10px;">
-            <div class="col-12 p-0 mt-2" style="height: 493px;overflow: scroll;">
+            <div class="col-12 p-0 mt-2" style="height: auto;overflow: scroll;">
               <div class="d-flex justify-content-end">
-                <!-- <button class="btn mb-2 text-white" style="background: #912C8A;"
-                  onclick="deselectAllLineData()">Reset</button> -->
               </div>
               <div onclick="indicator_wise_line_data('1732')" data-value="খাদ্য ও ত্রাণ সহায়তার জন্য প্রাপ্ত কল"
                 id="indicator-id-1732" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">
-                    খাদ্য ও ত্রাণ সহায়তার জন্য প্রাপ্ত কল
-                  </h6>
+                  <h6 class="mr-auto">Pre-Registration Of Hajj (Government)</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('1693')" data-value="মোট গৃহীত কল" id="indicator-id-1693"
                 class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">
-                    মোট গৃহীত কল
-                  </h6>
+                  <h6 class="mr-auto">Vitamin A+ Campaign</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('1733')" data-value="সরকারি সেবা প্রদান সংক্রান্ত কল-মাইগভ"
                 id="indicator-id-1733" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">
-                    সরকারি সেবা প্রদান সংক্রান্ত কল-মাইগভ
-                  </h6>
+                  <h6 class="mr-auto">Passport Status With Explanation</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('468')" data-value="বাল্যবিবাহ প্রতিরোধ সংক্রান্ত কল"
                 id="indicator-id-468" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">
-                    বাল্যবিবাহ প্রতিরোধ সংক্রান্ত কল
-                  </h6>
+                  <h6 class="mr-auto">Land related other queries</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('467')" data-value="সামাজিক সমস্যা প্রতিরোধ সংক্রান্ত কল"
                 id="indicator-id-467" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">
-                    সামাজিক সমস্যা প্রতিরোধ সংক্রান্ত কল
-                  </h6>
+                  <h6 class="mr-auto">Not Getting Proper Facilities for Corona Test</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('1606')" data-value="খাদ্য ও ত্রাণ সহায়তা সংক্রান্ত গৃহীত কল"
                 id="indicator-id-1606" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">
-                    খাদ্য ও ত্রাণ সহায়তা সংক্রান্ত গৃহীত কল
-                  </h6>
+                  <h6 class="mr-auto">Emergency Health Services - Cyclone Mocha - modmr</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
@@ -592,101 +593,116 @@
         </div>
       </div>
 
-
-      <div class="col-6 white-block mt-30 border border">
+      <!-- CQC Wise line chart  -->
+      <div class="col-8 white-block mt-30 border border">
         <div class="filter-input filter-buttons card pull-right">
         </div>
         <canvas id="line-canvas"></canvas>
       </div>
-
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    </div>
 
-      <div class="col-3 col-md-3 white-block mt-30 border border">
-        <table class="table table-responsive border text-center">
-          <thead class="font-weight-bold">
-            <tr>
-              <th class="tableHead">Category</th>
-              <th class="tableHead">Calls</th>
-              <th class="tableHead">Unique</th>
-              <th class="tableHead">Repeat</th>
-              <th class="tableHead">Satisfaction</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Category-1</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>85%</td>
-            </tr>
-            <tr>
-              <td>Category-2</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>85%</td>
-            </tr>
-            <tr>
-              <td>Category-3</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>95%</td>
-            </tr>
-            <tr>
-              <td>Category-4</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>85%</td>
-            </tr>
-            <tr>
-              <td>Category-5</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>80%</td>
-            </tr>
-            <tr>
-              <td>Category-6</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>95%</td>
-            </tr>
-            <tr>
-              <td>Category-7</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>98%</td>
-            </tr>
-            <tr>
-              <td>Category-8</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>95%</td>
-            </tr>
-            <tr>
-              <td>Category-9</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>90%</td>
-            </tr>
-            <tr>
-              <td>Category-10</td>
-              <td>55600</td>
-              <td>50%</td>
-              <td>45%</td>
-              <td>95%</td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="row">
+      <div class="col-lg-12 white-block mt-30">
+        <div class="container m-0 p-0">
+          <div>
+            <div class="d-flex justify-content-between mb-0">
+              <div class="titleDB">
+                <h3>SCQC Wise (Tabular View)</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered text-center">
+              <thead class="font-weight-bold text-center">
+                <tr>
+                  <th class="table-head col-4">Category</th>
+                  <th class="table-head col-2">Calls</th>
+                  <th class="table-head col-2">Unique</th>
+                  <th class="table-head col-2">Repeat</th>
+                  <th class="table-head col-2">Satisfaction</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-left">Pre-Registration Of Hajj (Government)</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>85%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">Vitamin A+ Campaign</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>85%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">Passport Status With Explanation</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>95%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">Land related other queries</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>85%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">Emergency Health Services - Cyclone Mocha - modmr</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>95%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">Place of Food Preparation Serving or Sale_Keep Away Bathroom</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>98%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">Not Covered Current 333 Complaint Category</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>95%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">DNCC ward Counselor Conatact Number</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>90%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">Rubella and Measles Vaccination Campaign</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>95%</td>
+                </tr>
+                <tr>
+                  <td class="text-left">E-TIN Application Step</td>
+                  <td>55600</td>
+                  <td>50%</td>
+                  <td>45%</td>
+                  <td>95%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
+
+
 
 
 
@@ -695,20 +711,30 @@
 
     <!-- map -->
     <div class="row">
-      <div class="col-lg-6 white-block mt-30 border">
-        <div class="row">
-          <h4>Heat Map</h4>
+      <div class="col-lg-7 white-block mt-30 border">
+        <div>
+          <div class="d-flex justify-content-between mb-0">
+            <div class="titleDB">
+              <h3>District and Upazilla Wise Call Statistics</h3>
+            </div>
+          </div>
         </div>
-        <!-- <img src="images/bd_map.jpeg" alt="Map of Bangladesh" style="width: 100%; height: auto;"> -->
-        <div id="bd_map_div">Heat map</div>
+        <div id="bd_map_div"></div>
       </div>
 
 
       <!-- District wise table -->
-      <div class="col-lg-6 white-block mt-30 border">
+      <div class="col-lg-5 white-block mt-30 border">
+        <div>
+          <div class="d-flex justify-content-between mb-0">
+            <div class="titleDB">
+              <h3>Upazilla Wise Call Statistics (Tabular View)</h3>
+            </div>
+          </div>
+        </div>
         <div>
           <table class="table table-bordered text-center">
-            <thead class="font-weight-bold">
+            <thead class="font-weight-bold" style="font-size: 12px;">
               <tr>
                 <td>District</td>
                 <td>Calls</td>
@@ -721,7 +747,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>Dhaka</td>
+                <td class="text-left">Dhaka</td>
                 <td>80</td>
                 <td>90</td>
                 <td>20</td>
@@ -730,7 +756,7 @@
                 <td>10</td>
               </tr>
               <tr>
-                <td>Munshigonj</td>
+                <td class="text-left">Munshigonj</td>
                 <td>70</td>
                 <td>60</td>
                 <td>50</td>
@@ -739,7 +765,7 @@
                 <td>12</td>
               </tr>
               <tr>
-                <td>Barishal</td>
+                <td class="text-left">Barishal</td>
                 <td>60</td>
                 <td>50</td>
                 <td>40</td>
@@ -748,7 +774,7 @@
                 <td>15</td>
               </tr>
               <tr>
-                <td>Sylhet</td>
+                <td class="text-left">Sylhet</td>
                 <td>50</td>
                 <td>40</td>
                 <td>30</td>
@@ -757,7 +783,7 @@
                 <td>13</td>
               </tr>
               <tr>
-                <td>Feni</td>
+                <td class="text-left">Feni</td>
                 <td>55</td>
                 <td>45</td>
                 <td>35</td>
@@ -766,7 +792,7 @@
                 <td>14</td>
               </tr>
               <tr>
-                <td>Comilla</td>
+                <td class="text-left">Comilla</td>
                 <td>65</td>
                 <td>55</td>
                 <td>45</td>
@@ -775,7 +801,7 @@
                 <td>16</td>
               </tr>
               <tr>
-                <td>Noakhali</td>
+                <td class="text-left">Noakhali</td>
                 <td>58</td>
                 <td>47</td>
                 <td>37</td>
@@ -784,7 +810,7 @@
                 <td>11</td>
               </tr>
               <tr>
-                <td>Chittagong</td>
+                <td class="text-left">Chittagong</td>
                 <td>70</td>
                 <td>80</td>
                 <td>30</td>
@@ -793,7 +819,7 @@
                 <td>14</td>
               </tr>
               <tr>
-                <td>Cox's Bazar</td>
+                <td class="text-left">Cox's Bazar</td>
                 <td>75</td>
                 <td>65</td>
                 <td>35</td>
@@ -802,7 +828,7 @@
                 <td>17</td>
               </tr>
               <tr>
-                <td>Rangamati</td>
+                <td class="text-left">Rangamati</td>
                 <td>68</td>
                 <td>58</td>
                 <td>40</td>
@@ -811,7 +837,7 @@
                 <td>13</td>
               </tr>
               <tr>
-                <td>Khagrachhari</td>
+                <td class="text-left">Khagrachhari</td>
                 <td>53</td>
                 <td>42</td>
                 <td>34</td>
@@ -820,7 +846,7 @@
                 <td>10</td>
               </tr>
               <tr>
-                <td>Rajshahi</td>
+                <td class="text-left">Rajshahi</td>
                 <td>85</td>
                 <td>95</td>
                 <td>25</td>
@@ -829,7 +855,7 @@
                 <td>16</td>
               </tr>
               <tr>
-                <td>Natore</td>
+                <td class="text-left">Natore</td>
                 <td>62</td>
                 <td>52</td>
                 <td>42</td>
@@ -838,7 +864,7 @@
                 <td>11</td>
               </tr>
               <tr>
-                <td>Bogra</td>
+                <td class="text-left">Bogra</td>
                 <td>63</td>
                 <td>53</td>
                 <td>43</td>
@@ -847,7 +873,7 @@
                 <td>15</td>
               </tr>
               <tr>
-                <td>Pabna</td>
+                <td class="text-left">Pabna</td>
                 <td>55</td>
                 <td>45</td>
                 <td>35</td>
@@ -856,7 +882,7 @@
                 <td>12</td>
               </tr>
               <tr>
-                <td>Naogaon</td>
+                <td class="text-left">Naogaon</td>
                 <td>72</td>
                 <td>62</td>
                 <td>52</td>
@@ -865,7 +891,7 @@
                 <td>14</td>
               </tr>
               <tr>
-                <td>Jessore</td>
+                <td class="text-left">Jessore</td>
                 <td>68</td>
                 <td>58</td>
                 <td>48</td>
@@ -874,7 +900,7 @@
                 <td>15</td>
               </tr>
               <tr>
-                <td>Jhenaidah</td>
+                <td class="text-left">Jhenaidah</td>
                 <td>50</td>
                 <td>40</td>
                 <td>30</td>
@@ -883,7 +909,7 @@
                 <td>12</td>
               </tr>
               <tr>
-                <td>Kushtia</td>
+                <td class="text-left">Kushtia</td>
                 <td>62</td>
                 <td>52</td>
                 <td>42</td>
@@ -892,7 +918,7 @@
                 <td>17</td>
               </tr>
               <tr>
-                <td>Chuadanga</td>
+                <td class="text-left">Chuadanga</td>
                 <td>45</td>
                 <td>35</td>
                 <td>25</td>
@@ -901,7 +927,7 @@
                 <td>10</td>
               </tr>
               <tr>
-                <td>Satkhira</td>
+                <td class="text-left">Satkhira</td>
                 <td>58</td>
                 <td>48</td>
                 <td>38</td>
@@ -921,21 +947,26 @@
     <!-- agent chart -->
     <div class="row">
       <div class="col-lg-8 white-block mt-30 border">
-        <div class="row">
-          <div class="col-8">
-            <h4 class="font-weight-bold">Agent Call Statistics</h4>
-          </div>
-          <div class="col-4">
-            <div id="reportrange3" class="d-flex justify-content-end"
-              style="background: #fff; cursor: pointer; padding: 5px; border: 1px solid #ccc;">
-              <i class="fa fa-calendar"></i>&nbsp;
-              <span></span> <i class="fa fa-caret-down"></i>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-7">
+              <div class="d-flex justify-content-between mb-0">
+                <div class="titleDB">
+                  <h3>Agent Call Statistics</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-5">
+              <div id="reportrange3"
+                class="d-flex justify-content-end align-items-center bg-white cursor-pointer border p-1 mt-3"
+                style="border-radius: 5px; cursor: pointer; width: 100%;">
+                <i class="fa fa-calendar mr-2"></i>
+                <span></span>
+                <i class="fa fa-caret-down ml-2"></i>
+              </div>
             </div>
           </div>
         </div>
-
-        <br>
-        <br>
 
         <div class="row">
           <div class="border">
@@ -947,17 +978,24 @@
 
       <!-- agent table  -->
       <div class="col-lg-4 white-block mt-30 border">
+        <div class="col-12 col-md-12">
+          <div class="d-flex justify-content-between mb-0">
+            <div class="titleDB">
+              <h3>Agent Call Statistics (Tabuler View)</h3>
+            </div>
+          </div>
+        </div>
         <div>
           <table class="table table-bordered text-center">
             <thead class="font-weight-bold !important">
               <thead>
                 <tr class="left-align">
-                  <th class="tableHead">Time</th>
-                  <th class="tableHead">Total Calls</th>
-                  <th class="tableHead">Target</th>
-                  <th class="tableHead">Abandoned</th>
-                  <th class="tableHead">Answered</th>
-                  <th class="tableHead">No of Agents</th>
+                  <th class="table-head">Time</th>
+                  <th class="table-head">Total Calls</th>
+                  <th class="table-head">Target</th>
+                  <th class="table-head">Abandoned</th>
+                  <th class="table-head">Answered</th>
+                  <th class="table-head">No of Agents</th>
                 </tr>
               </thead>
             <tbody>
@@ -1039,22 +1077,6 @@
                 <td>90</td>
                 <td>20</td>
                 <td>40</td>
-                <td>20</td>
-              </tr>
-              <tr>
-                <td>11.00</td>
-                <td>70</td>
-                <td>60</td>
-                <td>50</td>
-                <td>40</td>
-                <td>20</td>
-              </tr>
-              <tr>
-                <td>12.00</td>
-                <td>50</td>
-                <td>40</td>
-                <td>30</td>
-                <td>20</td>
                 <td>20</td>
               </tr>
             </tbody>

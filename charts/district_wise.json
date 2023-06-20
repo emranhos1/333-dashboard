@@ -11790,7 +11790,8 @@
                 "ADM0_PCODE": "BD",
                 "date": "2015/01/01",
                 "validOn": "2020/11/13",
-                "ValidTo": null
+                "ValidTo": null,
+                "description": "1. Gendaria, 2. Sutrapur, 3. Kotwali, 4. Wari"
             },
             "id": 12
         },

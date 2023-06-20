@@ -3,7 +3,8 @@
 }
 
 .small-heading {
-    font-size: 1.0em !important;
+    font-size: 1.20em !important;
+    /* font-weight: bold; */
 }
 
 .bold-bigger {
@@ -52,17 +53,23 @@
 }
 
 .spark-border {
-    border-left: 1px solid;
+    border-left: 1px solid rgb(206, 206, 206);
 }
 
-.tableHead {
+.table-head {
     font-weight: bold !important;
     color: black !important;
+    text-align: center;
+
 }
-
-
 
 #bd_map_div {
     width: 100%;
     height: 900px
+}
+
+.grid-cell {
+    border: 0px solid #ccc;
+    padding: 10px;
+    text-align: center;
 }
