@@ -73,3 +73,8 @@
     padding: 10px;
     text-align: center;
 }
+
+.table-responsive {
+    width: 100% !important;
+    margin-left: 40px !important ;
+}
