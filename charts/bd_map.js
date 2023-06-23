@@ -36,27 +36,20 @@ am5.ready(function () {
 
     polygonSeries.mapPolygons.template.events.on("pointerover", function (ev) {
         heatLegend.showValue(ev.target.dataItem.get("value"));
+        //console.log(ev.target.dataItem.get("name"))
     });
-
-
-
-    // load data function here
 
     function loadGeodata(country) {
 
-        // Default map
         var defaultMap = "bangladeshLow";
         chart.set("projection", am5map.geoMercator());
 
-
-        // calculate which map to be used
         var currentMap = defaultMap;
         var title = "";
         if (am5geodata_data_countries2[country] !== undefined) {
             currentMap = am5geodata_data_countries2[country]["maps"][0];
         }
 
-        // am5.net.load("district_wise_final.json").then(function (result) {
         am5.net.load("charts/district_wise.json").then(function (result) {
             var geodata = am5.JSONParser.parse(result.response);
             var data = [];
@@ -69,7 +62,7 @@ am5.ready(function () {
             polygonSeries.set("geoJSON", geodata);
             polygonSeries.data.setAll(data)
 
-            console.log("geoJSON", JSON.stringify(geodata));
+            // console.log("geoJSON", JSON.stringify(geodata));
         });
 
         chart.seriesContainer.children.push(am5.Label.new(root, {
@@ -109,6 +102,41 @@ am5.ready(function () {
     polygonSeries.events.on("datavalidated", function () {
         heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
         heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
+    });
+
+    // Create series for labels
+    var pointSeries = chart.series.push(
+        am5map.MapPointSeries.new(root, {
+            polygonIdField: "polygonId"
+        })
+    );
+
+    pointSeries.bullets.push(function () {
+        return am5.Bullet.new(root, {
+            sprite: am5.Label.new(root, {
+                fontSize: 10,
+                centerX: am5.p50,
+                centerY: am5.p50,
+                text: "{name}",
+                populateText: true
+            })
+        });
+    });
+
+
+    //  Add state labels
+    polygonSeries.events.on("datavalidated", function (ev) {
+        var series = ev.target;
+        var labelData = [];
+        series.mapPolygons.each(function (polygon) {
+            var id = polygon.dataItem.get("id");
+            var name = polygon.dataItem.dataContext.name;
+            labelData.push({
+                polygonId: id,
+                name: name
+            })
+        })
+        pointSeries.data.setAll(labelData);
     });
 
 }); // end am5.ready()

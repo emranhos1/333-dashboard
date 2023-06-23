@@ -42,9 +42,6 @@
   <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 
-  <!-- Resources for tree map -->
-  <script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/hierarchy.js"></script>
 
   <!--chart -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -59,7 +56,6 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
   <!-- chart js  -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/date.js"></script>
 </head>
 
@@ -102,53 +98,6 @@
   </header>
 
   <main class="container-fluid" style="width: 95% !important;">
-
-    <!-- date -- important -->
-    <div class="row">
-      <div class="row" id="fixedElement1" hidden="hidden">
-        <div class="col-md-12 text-center">
-          <div class="filter-input filter-buttons card">
-            <div class="btn-group btn-group-md flex-wrap" data-toggle="buttons">
-              <label class="btn btn-default" onclick="onclick_date('2013-01-01','2023-01-09')">
-                <input type="radio" name="options" id="option1" value="2013-01-01,2023-01-09" checked="">সামগ্রিক
-              </label>
-              <label class="btn btn-default" onclick="onclick_date('2022-01-01','2023-01-09','daily')">
-                <input type="radio" name="options" id="option2" data-val="daily" value="2022-01-01,2023-01-09">দৈনিক
-              </label>
-              <label class="btn btn-default" onclick="onclick_date('2022-11-01','2023-01-09')">
-                <input type="radio" name="options" id="option3" value="2022-11-01,2023-01-09">৩
-                মাসের
-              </label>
-              <label class="btn btn-default" onclick="onclick_date('2022-08-01','2023-01-09')">
-                <input type="radio" name="options" id="option4" value="2022-08-01,2023-01-09">৬
-                মাসের
-              </label>
-              <label class="btn btn-default" onclick="onclick_date('2022-05-01','2023-01-09')">
-                <input type="radio" name="options" id="option5" value="2022-05-01,2023-01-09">৯
-                মাসের
-              </label>
-              <label class="btn btn-default active" onclick="onclick_date('2022-02-01','2023-01-09')">
-                <input type="radio" name="options" id="option6" value="2022-02-01,2023-01-09">১২
-                মাসের
-              </label>
-              <label class="btn btn-default">
-                <input type="radio" name="options" id="reportrange" data-val="likeWise">পছন্দ মত
-              </label>
-              <button id="specific-value" value="false" onclick="specificValue();" style="border:0;
-                                    background: #fff;
-                                    font-size: 22px;
-                                    color: #912c8a;
-                                    cursor: pointer;">
-                <i class="fa fa-toggle-off"></i>
-              </button>
-              <label class="mb-1" style="margin-top: 7px; padding-right: 15px">নির্দিষ্ট</label>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
 
     <div class="row">
       <div class="col-lg-7 white-block mt-30 border">
@@ -542,63 +491,63 @@
             </div>
           </div>
 
-          <div class="row" style="font-size: 10px;">
+          <div class="row line" style="font-size: 10px;" id="specific-value"  onclick="specificValue();">
             <div class="col-12 p-0 mt-2" style="height: auto;overflow: scroll;">
               <div class="d-flex justify-content-end">
               </div>
               <div onclick="indicator_wise_line_data('1732')" data-value="খাদ্য ও ত্রাণ সহায়তার জন্য প্রাপ্ত কল"
                 id="indicator-id-1732" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">Pre-Registration Of Hajj (Government)</h6>
+                  <h6 class="mr-auto line-background">Pre-Registration Of Hajj (Government)</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('1693')" data-value="মোট গৃহীত কল" id="indicator-id-1693"
                 class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">Vitamin A+ Campaign</h6>
+                  <h6 class="mr-auto line-background">Vitamin A+ Campaign</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('1733')" data-value="সরকারি সেবা প্রদান সংক্রান্ত কল-মাইগভ"
                 id="indicator-id-1733" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">Passport Status With Explanation</h6>
+                  <h6 class="mr-auto line-background">Passport Status With Explanation</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('468')" data-value="বাল্যবিবাহ প্রতিরোধ সংক্রান্ত কল"
                 id="indicator-id-468" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">Land related other queries</h6>
+                  <h6 class="mr-auto line-background">Land related other queries</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('467')" data-value="সামাজিক সমস্যা প্রতিরোধ সংক্রান্ত কল"
                 id="indicator-id-467" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">Not Getting Proper Facilities for Corona Test</h6>
+                  <h6 class="mr-auto line-background">Not Getting Proper Facilities for Corona Test</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('1606')" data-value="খাদ্য ও ত্রাণ সহায়তা সংক্রান্ত গৃহীত কল"
                 id="indicator-id-1606" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">Emergency Health Services - Cyclone Mocha</h6>
+                  <h6 class="mr-auto line-background">Emergency Health Services - Cyclone Mocha</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('1606')" data-value="খাদ্য ও ত্রাণ সহায়তা সংক্রান্ত গৃহীত কল"
                 id="indicator-id-1606" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">E-TIN Application Step</h6>
+                  <h6 class="mr-auto line-background">E-TIN Application Step</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
               <div onclick="indicator_wise_line_data('1606')" data-value="খাদ্য ও ত্রাণ সহায়তা সংক্রান্ত গৃহীত কল"
                 id="indicator-id-1606" class="ml-1 indicator-name pl-4">
                 <div class="d-flex">
-                  <h6 class="mr-auto">Rubella and Measles Vaccination Campaign</h6>
+                  <h6 class="mr-auto line-background">Rubella and Measles Vaccination Campaign</h6>
                   <span class="onHover"><i class="fa fa-caret-right fa-lg"></i> </span>
                 </div>
               </div>
@@ -616,6 +565,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     </div>
 
+    <!-- scqc tabuler  view -->
     <div class="row">
       <div class="col-lg-12 white-block mt-30">
         <div class="container m-0 p-0">
@@ -715,11 +665,6 @@
         </div>
       </div>
     </div>
-
-
-
-
-
 
     <!-- IVR stat testing ends here -->
 
@@ -1105,9 +1050,6 @@
 
   </main>
 
-  <!-- <script src="https://dashboard.a2i.gov.bd/assets/plugins/jquery/jquery-1.11.1.min.js"></script> -->
-  <script src="https://dashboard.a2i.gov.bd/assets/plugins/tether/js/tether.min.js"></script>
-  <script src="https://dashboard.a2i.gov.bd/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
   <!-- important 1 ok-->
   <script>
